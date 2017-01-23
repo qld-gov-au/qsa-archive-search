@@ -1,0 +1,10 @@
+<label for="filter_{{qsaTargetField}}">
+    <span class="label">{{ qsaTargetField | sentenceCase }}</span>
+</label>
+<input id="filter_{{qsaTargetField}}" 
+       type="text"
+       name="filter_{{qsaTargetField}}"
+       class="search-input"
+       placeholder=""
+       size="30"
+       ng-model="ngModel" />
