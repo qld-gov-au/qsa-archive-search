@@ -107,7 +107,7 @@ class DataTablesProvider {
             return false;
         }
 
-        if (angular.element(`#${this.tableId}`)[0].tagName !== 'TABLE') {
+        if (angular.element(`#${this.tableId}`)[0] && angular.element(`#${this.tableId}`)[0].tagName !== 'TABLE') {
             console.error(`Element #${this.tableId} is not a TABLE`);
             return false;
         }

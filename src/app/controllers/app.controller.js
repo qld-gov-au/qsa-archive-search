@@ -75,7 +75,6 @@ class AppCtrl {
         this.isSearching = true;
         this.showWarning = false;
         this.searchResultStyle.display = 'block';
-        this.DataTablesProvider.destroy();
 
         if (!this.validateFilters()) {
             this.showFilterWarning = true;
@@ -92,6 +91,8 @@ class AppCtrl {
 
             this.CategoryService.getSearchResults(queries, (data) => {
                 if (data.success && data.success !== 'NONE') {
+                    this.DataTablesProvider.destroy();
+
                     let columns = this.DataTablesProvider.setColumns(this.selectedIndex.primary);
 
                     let renderSuccess = this.DataTablesProvider.renderTable(this.selectedIndex.primary, resourceId, columns, data.records,
