@@ -53,7 +53,7 @@ class DataTablesProvider {
         return columns;
     }
 
-    formatExtraInfo(primaryFields, node, data) {
+    formatExtraInfo(primaryFields, node, data, resourceId) {
         let excludedFields = [...primaryFields, '_ID', '_FULL_TEXT', 'DESCRIPTION', 'INDEX NAME'];
 
         let rowClass = angular.element(node).hasClass('even') ? 'even' : 'odd';
@@ -61,6 +61,8 @@ class DataTablesProvider {
         let extraInfo = `<tr class="${rowClass} detailedInfoRow open">
                             <td>&nbsp;</td>
                             <td colspan="${primaryFields.length}">`;
+        //--As a part of order online button--
+        let urlLink = "request-form/index.html?checkbox=1&search=1";
 
         if (!data['INDEX NAME']) data['INDEX NAME'] = 'No index name provided';
         if (!data['DESCRIPTION']) data['DESCRIPTION'] = 'No description provided';
@@ -78,17 +80,28 @@ class DataTablesProvider {
 
                 extraInfo += `<li><b>${formatedKey}</b><ul><li>${data[key]}</li></ul></li>`;
             }
+            // --As a part of order online button--
+            if (key == '_ID') {
+                let formatedKeyId = key.replace(/\w\S*/g, (txt) => {
+                    return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+                });
+                urlLink += `&${formatedKeyId}=${data[key]}`;
+            }
+            // -- End OnlineButn--
         });
+        // --As a part of order online button--
+        urlLink += `&resource_id=${resourceId}`;
 
         // Display an Order Online button
         extraInfo += `</ul><form class="form form-button">
-                            <button class="qsa-button">Order Online</button>
+                            <a href=${urlLink}><button class="qsa-button">Order Online</button></a>
                            </form></td></tr>`;
 
         return extraInfo;
     }
 
-    renderTable(primaryFields, columns, data, drawCallback) {
+    renderTable(primaryFields, resourceId, columns, data, drawCallback) {
+
         if (!(this.tableId && typeof this.tableId === 'string' && this.tableId.length > 0)) {
             console.error('Datatable Id is not defined');
             return false;
@@ -131,7 +144,7 @@ class DataTablesProvider {
                 angular.element(tr).next().remove();
                 tr.removeClass('shown');
             } else {
-                angular.element(row.node()).after(this.formatExtraInfo(primaryFields, row.node(), row.data()));
+                angular.element(row.node()).after(this.formatExtraInfo(primaryFields, row.node(), row.data(), resourceId));
                 tr.addClass('shown');
             }
         });

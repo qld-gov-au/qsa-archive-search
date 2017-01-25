@@ -1,14 +1,15 @@
 class AppCtrl {
-    showResult = false;
     showWarning = false;
     showFilterWarning = false;
     isSearching = false;
     selectedCategoryKey = '';
     selectedCategory = {};
+    selectedIndexKey = '';
     selectedIndex = {};
+    resultCategoryName = '';
+    resultIndexName = '';
     warningHeader = '';
     warningMessage = '';
-    searchButtonText = 'Search';
     datatableId = 'qsa-result-table';
     filters = [];
     suggestions = [];
@@ -16,10 +17,9 @@ class AppCtrl {
         display: 'none'
     };
 
-    constructor(CategoryService, DataTablesProvider, $window) {
+    constructor(CategoryService, DataTablesProvider) {
         this.CategoryService = CategoryService;
         this.DataTablesProvider = DataTablesProvider;
-        this.window = $window;
         this.categories = CategoryService.getCategories();
 
         this.DataTablesProvider.setTableId(this.datatableId);
@@ -36,15 +36,8 @@ class AppCtrl {
     changeIndex(indexKey) {
         this.showWarning = false;
         this.showFilterWarning = false;
-
-        // Tick the selected index and pop up its filters
-        if (this.selectedIndex && this.selectedIndex === this.selectedCategory.indexes[indexKey]) {
-            this.filters = [];
-            this.selectedIndex = {};
-        } else { // Untick the clicked index and hide its filters
-            this.selectedIndex = this.selectedCategory.indexes[indexKey];
-            this.filters = this.getFilters(this.selectedIndex.searchable);
-        }
+        this.selectedIndex = this.selectedCategory.indexes[indexKey];
+        this.filters = this.getFilters(this.selectedIndex.searchable);
     }
 
     getIndexIdentifier(categoryKey, indexKey) {
@@ -81,6 +74,8 @@ class AppCtrl {
     searchResults() {
         this.isSearching = true;
         this.showWarning = false;
+        this.searchResultStyle.display = 'block';
+        this.DataTablesProvider.destroy();
 
         if (!this.validateFilters()) {
             this.showFilterWarning = true;
@@ -97,21 +92,22 @@ class AppCtrl {
 
             this.CategoryService.getSearchResults(queries, (data) => {
                 if (data.success && data.success !== 'NONE') {
-                    this.showResult = true;
                     let columns = this.DataTablesProvider.setColumns(this.selectedIndex.primary);
 
-                    let renderSuccess = this.DataTablesProvider.renderTable(this.selectedIndex.primary, columns, data.records,
-                        (drawCount) => {
+                    let renderSuccess = this.DataTablesProvider.renderTable(this.selectedIndex.primary, resourceId, columns, data.records,
+                        () => {
                             this.isSearching = false;
-                            this.searchResultStyle.display = 'block';
-                            this.searchButtonText = 'Refine';
-                            drawCount > 1 ? this.scrollToTop(400) : this.scrollToTop();
+                            this.resultCategoryName = this.selectedCategory.categoryName;
+                            this.resultIndexName = this.selectedIndex.indexName;
+                            this.scrollToResult();
                         });
 
                     if (!renderSuccess) {
+                        this.searchResultStyle.display = 'none';
                         this.displayWarning('Cannot Display Results', 'Please contact QSA');
                     }
                 } else {
+                    this.searchResultStyle.display = 'none';
                     this.displayWarning('Please Try Later', 'This index is currently not available');
                 }
 
@@ -120,6 +116,7 @@ class AppCtrl {
                 }
             });
         }, (err) => {
+            this.searchResultStyle.display = 'none';
             this.displayWarning('Please Try Later', 'This index is currently not available');
 
             console.log(`Failed to get index fields from ${this.selectedIndex.indexName}`);
@@ -127,25 +124,11 @@ class AppCtrl {
         });
     }
 
-    scrollToTop(positionY) {
-        if (positionY === undefined) positionY = 285;
-
-        this.window.scrollTo(0, positionY);
-    }
-
-    reset() {
-        this.selectedCategoryKey = '';
-        this.selectedIndex = {};
-        this.filters = [];
-        this.showResult = false;
-        this.showFilterWarning = false;
-        this.searchResultStyle.display = 'none';
-        this.searchButtonText = 'Search';
-        this.DataTablesProvider.destroy();
-        this.scrollToTop();
+    scrollToResult() {
+        angular.element('body').scrollTo('#result-block');
     }
 }
 
-AppCtrl.$inject = ['CategoryService', 'DataTablesProvider', '$window'];
+AppCtrl.$inject = ['CategoryService', 'DataTablesProvider'];
 
 export default AppCtrl;

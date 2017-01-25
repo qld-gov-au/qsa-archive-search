@@ -12,7 +12,7 @@
         </div>
     </div>
 </div>
-<div ng-show="!vm.showResult">
+<div>
     <h2>Category/Index</h2>
     <div>
         <div ng-repeat="category in vm.categories">
@@ -29,12 +29,14 @@
                         <ul class="choices" 
                             ng-show="vm.selectedCategoryKey === category.categoryKey">
                             <li ng-repeat="(indexKey, index) in category.indexes">
-                                <input type="checkbox" 
-                                       id="{{ vm.getIndexIdentifier(category.categoryKey, indexKey) }}" 
-                                       ng-checked="index.indexName === vm.selectedIndex.indexName"
-                                       ng-click="vm.changeIndex(indexKey)" />
-                                <label for="{{ vm.getIndexIdentifier(category.categoryKey, indexKey) }}"
-                                       ng-bind="index.indexName" />
+                                <label>
+                                    <input type="radio" 
+                                           name="index" 
+                                           ng-model="vm.selectedIndexKey" 
+                                           ng-value="vm.getIndexIdentifier(category.categoryKey, indexKey)" 
+                                           ng-change="vm.changeIndex(indexKey)"> 
+                                    {{ index.indexName }}
+                                </label>
                             </li>
                         </ul>
                     </li>
@@ -42,12 +44,6 @@
             </div>
         </div>
     </div>    
-</div>
-<div ng-style="vm.searchResultStyle">
-    <h2>Search result</h2>
-    <p ng-bind="vm.selectedCategory.categoryName" />
-    <p ng-bind="vm.selectedIndex.indexName" />
-    <table id="{{ vm.datatableId }}" class="stripe" width="100%" cellspacing="0"></table>
 </div>
 <div ng-show="vm.filters.length">
     <hr class="border-top">
@@ -70,11 +66,16 @@
         </div>
         <div class="search-button-container">
             <strong><button id="main-search-button"
-                            ng-click="vm.searchResults()" 
-                            ng-bind="vm.searchButtonText"
+                            ng-click="vm.searchResults()"
                             qsa-no-focus>
+                            Search
             </button></strong>
-            <button ng-click="vm.reset()" ng-show="vm.showResult">Reset</button>
         </div>
     </form>
+</div>
+<div id="result-block" ng-style="vm.searchResultStyle">
+    <h2>Search result</h2>
+    <p ng-bind="vm.resultCategoryName" />
+    <p ng-bind="vm.resultIndexName" />
+    <table id="{{ vm.datatableId }}" class="stripe" width="100%" cellspacing="0"></table>
 </div>
