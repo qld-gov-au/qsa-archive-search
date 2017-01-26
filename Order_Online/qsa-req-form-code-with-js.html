@@ -1,0 +1,668 @@
+<script>
+    $(document).ready(function(){
+    if (window.location.search.indexOf('checkbox=1') > -1) {
+      var selChkBox = getDetails.getParameterByName('checkbox');
+      if(selChkBox!="" && selChkBox!=null){
+        selChkBox = selChkBox.trim();
+      }
+      var selId = getDetails.getRecordIdValue();
+      var selResourceId = getDetails.getResIdValue();
+      var str="";
+      $('#hdnUrl').show();
+      $('#item-url').val("https://qld-uat.ssq.qld.gov.au//dsiti/qsa/request-form/index-result/index.html?resource_id="+selResourceId+"&_id="+selId);
+      if(selId!=null && selResourceId!=null && selId!="" && selResourceId!=""){
+       
+          var strDataObj = getDetails.sqlQuery(selId,selResourceId,function successCallback(strData){
+          var strDatDetails =strData.result.records[0];
+          $('#item-1-id-or-title').val(strDatDetails["Item ID"]);
+
+          $.each(strDatDetails, function( index, value ) {
+            if(index != "Description" && index !="Digital image" && index != "Source" && index != "_full_text" && index != "_id" && index != "Item ID"){
+              str  = str + index + " = " +value + "\n";  
+          }
+          });
+
+          $('#item-1-full-entry-details-or-description').attr('rows', '5');
+          $('#item-1-full-entry-details-or-description').val(str);
+        }, function errorCallback(strErrData){
+            $('#errMsg').show();
+        });
+    }
+    else{
+        $('#errMsg').show(); 
+    }
+    if(selChkBox == "1"){
+      $('#how-can-we-help-you-i-need-copies-of-materials-held-in-the-archives').prop('checked', true);
+      $('#how-can-we-help-you-i-need-copies-of-materials-held-in-the-archives').click();
+      $('#do-the-records-you-require-relate-to-people-and-individuals-or-other-things-people-and-individuals').prop('checked', true);
+      $('#have-you-found-details-about-them-in-the-online-indexes-or-archivesearch-already-yes').prop('checked', true);
+      $('#have-you-found-details-about-them-in-the-online-indexes-or-archivesearch-already-yes').click();       
+    }
+  }
+});
+
+    function yesCheck() {
+      
+    if (document.getElementById('have-you-found-details-about-them-in-the-online-indexes-or-archivesearch-already-yes').checked) {
+        document.getElementById('ifTerms').style.display = 'block';
+    }
+    else document.getElementById('ifTerms').style.display = 'none';
+}
+
+function enquiriesCheck() {
+    if (document.getElementById('how-can-we-help-you-general-enquiries-or-needing-help').checked) {
+        document.getElementById('ifTerms').style.display = 'block';
+    }
+    else document.getElementById('ifTerms').style.display = 'none';
+}
+
+    </script>
+
+<form class="form" action="https://test.smartservice.qld.gov.au/services/submissions/email/qld/qsa-request" enctype="application/x-www-form-urlencoded" method="post">
+  <ol class="questions">
+    <li>
+      <fieldset>
+        <legend> <span class="h2">How can we help you?</span> <abbr title="(required)" class="required">*</abbr> </legend>
+        <ul class="choices">
+          <li>
+            <input type="radio" onclick="enquiriesCheck();" name="how-can-we-help-you" value="I need copies of materials held in the archives" required id="how-can-we-help-you-i-need-copies-of-materials-held-in-the-archives" />
+            <label for="how-can-we-help-you-i-need-copies-of-materials-held-in-the-archives">I need copies of materials held in the archives</label>
+          </li>
+          <li>
+            <input type="radio" onclick="enquiriesCheck();" name="how-can-we-help-you" value="General enquiries or needing help" required id="how-can-we-help-you-general-enquiries-or-needing-help" />
+            <label for="how-can-we-help-you-general-enquiries-or-needing-help">General enquiries or needing help</label>
+          </li>
+        </ul>
+      </fieldset>
+    </li>
+    <li class="section">
+      <fieldset>
+        <legend> <span class="h2">General enquiries or needing help</span> <small class="hint relevance">(If you chose ‘General enquiries or needing help’ above)</small> </legend>
+        <ol class="questions">
+          <li>
+            <fieldset id="name1">
+              <legend> <span class="label">What do you need help with?</span> <small class="hint">Select all that apply</small> </legend>
+              <ul class="choices">
+                <li>
+                  <input type="checkbox" name="what-do-you-need-help-with" value="Deed poll name change records" id="what-do-you-need-help-with-deed-poll-name-change-records" />
+                  <label for="what-do-you-need-help-with-deed-poll-name-change-records">Deed poll name change records</label>
+                </li>
+                <li>
+                  <input type="checkbox" name="what-do-you-need-help-with" value="Family History" id="what-do-you-need-help-with-family-history" />
+                  <label for="what-do-you-need-help-with-family-history">Family History</label>
+                </li>
+                <li>
+                  <input type="checkbox" name="what-do-you-need-help-with" value="Legal or court records" id="what-do-you-need-help-with-legal-or-court-records" />
+                  <label for="what-do-you-need-help-with-legal-or-court-records">Legal or court records</label>
+                </li>
+                <li>
+                  <input type="checkbox" name="what-do-you-need-help-with" value="Land records" id="what-do-you-need-help-with-land-records" />
+                  <label for="what-do-you-need-help-with-land-records">Land records</label>
+                </li>
+                <li>
+                  <input type="checkbox" name="what-do-you-need-help-with" value="Academic research" id="what-do-you-need-help-with-academic-research" />
+                  <label for="what-do-you-need-help-with-academic-research">Academic research</label>
+                </li>
+                <li>
+                  <input type="checkbox" name="what-do-you-need-help-with" value="School records" id="what-do-you-need-help-with-school-records" />
+                  <label for="what-do-you-need-help-with-school-records">School records</label>
+                </li>
+                <li>
+                  <input type="checkbox" name="what-do-you-need-help-with" value="Transport history" id="what-do-you-need-help-with-transport-history" />
+                  <label for="what-do-you-need-help-with-transport-history">Transport history</label>
+                </li>
+                <li>
+                  <input type="checkbox" name="what-do-you-need-help-with" value="Other" id="what-do-you-need-help-with-other" />
+                  <label for="what-do-you-need-help-with-other">Other</label>
+                </li>
+              </ul>
+            </fieldset>
+          </li>
+        </ol>
+      </fieldset>
+    </li>
+    <li class="section">
+      <fieldset>
+        <legend> <span class="h2">Deed poll record requests</span> <small class="hint relevance">(If you chose ‘Deed poll name change records’ above)</small> </legend>
+        <ol class="questions">
+          <li>
+            <p></p>
+            <div class="status info">
+              <h2>Important</h2>
+              <p>Deed poll records can only be supplied to the person a record relates to.</p>
+              <p>If you require records for another person, you must apply to the supreme court. Queensland State Archives will be unable to assist you.</p>
+              <p>If you are requesting your own records, please give us the following information:</p>
+              <ul>
+                <li>• Full names prior to and after the change.</li>
+                <li>• Any name changes that also occured through marriage or divorce.</li>
+                <li>• The approximate date (within a 5 year range).</li>
+                <li>• The approximate region in which the change was made.</li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <label for="information-you-can-provide"> <span class="label">Information you can provide</span> <abbr title="(required)" class="required">*</abbr> <small class="hint">Be as detailed as possible, using the list above as a guide.</small> </label>
+            <textarea name="information-you-can-provide" rows="10" cols="40" required id="information-you-can-provide"></textarea>
+          </li>
+        </ol>
+      </fieldset>
+    </li>
+    <li class="section">
+      <fieldset>
+        <legend> <span class="h2">Family history record requests</span> <small class="hint relevance">(If you chose ‘Family History’ above)</small> </legend>
+        <ol class="questions">
+          <li>
+            <p></p>
+            <div class="status info">
+              <h2>Important</h2>
+              <p>What type of records are you looking for? Examples include Wills, Court cases, Immigration records etc.</p>
+              <p>When requesting information about family records held by us, please supply the following:              </p>
+              <ul>
+                <li>• The type of records are you looking for</li>
+                <li>• Full names of the people involved.</li>
+                <li>• A geographical place or location.</li>
+                <li>• An approximate date (within a 5 year range).</li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <label for="what-family-history-information-are-you-looking"> <span class="label">What family history information are you looking for?</span> <abbr title="(required)" class="required">*</abbr> <small class="hint">Please refer to the list above when providing information</small> </label>
+            <textarea name="what-family-history-information-are-you-looking" rows="10" cols="40" required id="what-family-history-information-are-you-looking"></textarea>
+          </li>
+        </ol>
+      </fieldset>
+    </li>
+    <li class="section">
+      <fieldset>
+        <legend> <span class="h2">Legal or court record requests</span> <small class="hint relevance">(If you chose ‘Legal or court records’ above)</small> </legend>
+        <ol class="questions">
+          <li>
+            <p></p>
+            <div class="status info">
+              <h2>Important</h2>
+                <p>Please note, many court records are held under a Restricted Access Period and may be closed to the public.</p>
+                <p>When requesting information about court records held by us, please supply the following:</p>
+
+                <ul>
+                <li>• What are the names of the people involved?</li>
+                <li>• What is the name of the court the case was heard in?</li>
+                <li>• What was the activity heard before the court (ie criminal or civil?)?</li>
+                <li>• What was the date (within 5 year time range)?</li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <label for="legal-details-you-are-looking-for">Court record<span class="label"> details you are looking for:</span> <abbr title="(required)" class="required">*</abbr> <small class="hint">Please refer to the list above when providing information</small> </label>
+            <textarea name="legal-details-you-are-looking-for" rows="10" cols="40" required id="legal-details-you-are-looking-for"></textarea>
+          </li>
+        </ol>
+      </fieldset>
+    </li>
+    <li class="section">
+      <fieldset>
+        <legend> <span class="h2">Land records requests</span> <small class="hint relevance">(If you chose ‘Land records’ above)</small> </legend>
+        <ol class="questions">
+          <li>
+            <p></p>
+            <div class="status info">
+              <h2>Important</h2>
+              <p>To request information about land records held by us, please supply the following:</p>
+              <ul>
+                <li>• What type of land record are you searching for?</li>
+                <li>• In which Parish and County was the land located?</li>
+                <li>• Is there a person's name associated with the land?</li>
+                <li>• What was the date (within 5 year time range)?</li>
+                <li>• If known, what was the Land Agent's district?</li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <label for="local-history-record-information"> <span class="label">Local history record information</span> <abbr title="(required)" class="required">*</abbr> <small class="hint">Please refer to the list above when providing information</small> </label>
+            <textarea name="local-history-record-information" rows="10" cols="40" required id="local-history-record-information"></textarea>
+          </li>
+        </ol>
+      </fieldset>
+    </li>
+    <li class="section">
+      <fieldset>
+        <legend> <span class="h2">Researching the archives</span> <small class="hint relevance">(If you chose ‘Academic research’ above)</small> </legend>
+        <ol class="questions">
+          <li>
+            <p></p>
+            <div class="status info">
+              <h2>Important</h2>
+              <p>Please note, many records are held under a Restricted Access Period and may be closed to the public. Please allow sufficient time to contact the responsible agency for permission to use the closed records in your research.</p>
+              <p>When requesting records held by us, please supply the following:</p>
+              <ul>
+                <li>• What is the topic or activity you are researching?</li>
+                <li>• Do you have a deadline for your research and what is it?</li>
+                <li>• What was the activity heard before the court (ie criminal or civil?)?</li>
+                <li>• Full names of the people involved.</li>
+                <li>• A geographical place or location.</li>
+                <li>• An approximate date (within a 5 year range).</li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <label for="what-you-are-researching"> <span class="label">What you are researching</span> <abbr title="(required)" class="required">*</abbr> <small class="hint">Please refer to the list above when providing information</small> </label>
+            <textarea name="what-you-are-researching" rows="10" cols="40" required id="what-you-are-researching"></textarea>
+          </li>
+        </ol>
+      </fieldset>
+    </li>
+    <li class="section">
+      <fieldset>
+        <legend> <span class="h2">School record requests</span> <small class="hint relevance">(If you chose ‘School records’ above)</small> </legend>
+        <ol class="questions">
+          <li>
+            <p></p>
+            <div class="status info">
+              <h2>Important</h2>
+              <p>Please provide the following when requesting school records held by us:</p>
+              <ul>
+                <li>• The type of school records are you searching for</li>
+                <li>• The name of the school</li>
+                <li>• Student names</li>
+                <li>• Student admission dates</li>
+                <li>• Student attendance period or years</li>
+                <li>• Teacher names</li>
+                <li>• Teacher's service period at the school, within a 5 year range.</li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <label for="school-records-information"> <span class="label">School records information</span> <abbr title="(required)" class="required">*</abbr> <small class="hint">Please refer to the list above when providing information</small> </label>
+            <textarea name="school-records-information" rows="10" cols="40" required id="school-records-information"></textarea>
+          </li>
+        </ol>
+      </fieldset>
+    </li>
+    <li class="section">
+      <fieldset>
+        <legend> <span class="h2">Transport history requests</span> <small class="hint relevance">(If you chose ‘Transport history’ above)</small> </legend>
+        <ol class="questions">
+          <li>
+            <p></p>
+            <div class="status info">
+              <h2>Important</h2>
+              <p>Please provide the following when requesting Transport History records held by us:</p>
+              <ul>
+                <li>• The type of records are you looking for (for example railway or ship records)</li>
+                <li>• If the records are about railway carriages (rolling stock) or railway station plans</li>
+                <li>• Any name or unique identifiers of the rolling stock or ship</li>
+                <li>• The name of the station or port</li>
+                <li>• A geographical place or location</li>
+                <li>• An approximate date (within a 5 year range).</li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <label for="transport-history-information"> <span class="label">Transport history information</span> <abbr title="(required)" class="required">*</abbr> <small class="hint">Please refer to the list above when providing information</small> </label>
+            <textarea name="transport-history-information" rows="10" cols="40" required id="transport-history-information"></textarea>
+          </li>
+        </ol>
+      </fieldset>
+    </li>
+    <li class="section">
+      <fieldset>
+        <legend> <span class="h2">Other enquiries</span> <small class="hint relevance">(If you chose ‘Other’ above)</small> </legend>
+        <ol class="questions">
+          <li>
+            <p></p>
+            <div class="status info">
+              <h2>Important</h2>
+              <p>When requesting other records that aren't listed above, please be as detailed as possible about what you are looking for. The essential things we need from you are: </p>
+              <ul>
+                <li>• The type of records are you looking for</li>
+                <li>• Full names of the people involved</li>
+                <li>• A geographical place or location</li>
+                <li>• An approximate date (within a 5 year range).</li>
+              </ul>
+              <p>Please be aware that many records are held under Restricted Access Periods, and may be closed to the public. Please allow time for us to contact responsible agencies if their permission is required to share closed records.</p>
+            </div>
+          </li>
+          <li>
+            <label for="other-information"> <span class="label">Other information</span> <abbr title="(required)" class="required">*</abbr> <small class="hint">Please refer to the list above when providing information</small> </label>
+            <textarea name="other-information" rows="10" cols="40" required id="other-information"></textarea>
+          </li>
+        </ol>
+      </fieldset>
+    </li>
+    
+    <li class="section">
+      <fieldset>
+        <legend> <span class="h2">Request copies of records held in the archives</span> <small class="hint relevance">(If you chose ‘I need copies of materials held in the archives’ above)</small> </legend>
+        <ol class="questions">
+          <li>
+            <fieldset>
+              <legend> <span class="label">Do the records you require relate to people and individuals or other things?</span> <abbr title="(required)" class="required">*</abbr> <small class="hint">People and individuals records are generally held in the Online Indexes, other things may be in ArchiveSearch</small> </legend>
+              <ul class="choices compact">
+                <li>
+                  <input type="radio" name="do-the-records-you-require-relate-to-people-and-individuals-or-other-things" value="People and individuals" required id="do-the-records-you-require-relate-to-people-and-individuals-or-other-things-people-and-individuals" />
+                  <label for="do-the-records-you-require-relate-to-people-and-individuals-or-other-things-people-and-individuals">People and individuals</label>
+                </li>
+                <li>
+                  <input type="radio" name="do-the-records-you-require-relate-to-people-and-individuals-or-other-things" value="Other things" required id="do-the-records-you-require-relate-to-people-and-individuals-or-other-things-other-things" />
+                  <label for="do-the-records-you-require-relate-to-people-and-individuals-or-other-things-other-things">Other things</label>
+                </li>
+              </ul>
+            </fieldset>
+          </li>
+          <li>
+            <fieldset>
+              <legend> <span class="label">Have you found details about them in the Online Indexes or ArchiveSearch already?</span> <abbr title="(required)" class="required">*</abbr> </legend>
+              <ul class="choices compact">
+                <li>
+                  <input type="radio" onclick="yesCheck();" name="have-you-found-details-about-them-in-the-online-indexes-or-archivesearch-already" value="Yes" required id="have-you-found-details-about-them-in-the-online-indexes-or-archivesearch-already-yes" />
+                  <label for="have-you-found-details-about-them-in-the-online-indexes-or-archivesearch-already-yes">Yes</label>
+                </li>
+                <li>
+                  <input type="radio" onclick="yesCheck();" name="have-you-found-details-about-them-in-the-online-indexes-or-archivesearch-already" value="How do I do that?" required id="have-you-found-details-about-them-in-the-online-indexes-or-archivesearch-already-how-do-i-do-that" />
+                  <label for="have-you-found-details-about-them-in-the-online-indexes-or-archivesearch-already-how-do-i-do-that">How do I do that?</label>
+                </li>
+                <li>
+                  <input type="radio" onclick="yesCheck();" name="have-you-found-details-about-them-in-the-online-indexes-or-archivesearch-already" value="Unable to locate it" required id="have-you-found-details-about-them-in-the-online-indexes-or-archivesearch-already-unable-to-locate-it" />
+                  <label for="have-you-found-details-about-them-in-the-online-indexes-or-archivesearch-already-unable-to-locate-it">Unable to locate it</label>
+                </li>
+              </ul>
+            </fieldset>
+          </li>
+          <li>
+            <p> <small class="hint relevance">(If you chose ‘How do I do that?’ above)</small> </p>
+            <div class="status info">
+              <h2>Online Index search</h2>
+              <p>Go to the Online Indexes URL and search for entries in the database. MORE INFO ABOUT ARCHIVE SEARCH and ONLINE INDEXES</p>
+            </div>
+          </li>
+          <li>
+            <p> <small class="hint relevance">(If you chose ‘Unable to locate it’ above)</small> </p>
+            <div class="status info">
+              <h2>Item not in Online Indexes or ArchiveSearch</h2>
+              <p>The records you're looking for aren't located in our Online Indexes or ArchiveSearch. INFO ABOUT WHAT IS HELD HERE. Change your selection above to Other things, or return to the start of this form and select "General enquiries..."</p>
+            </div>
+          </li>
+        </ol>
+      </fieldset>
+      
+    </li>
+    <div id="errMsg" class="status warn" style="display:none">
+              <p>An error has occured in populating the details. Please try again.</p>
+            </div>
+    <li class="section">
+      <fieldset>
+        <legend> <span class="h2">Copy details</span> <small class="hint relevance">(If you chose ‘Yes’ above)</small> </legend>
+        <ol class="questions">
+          <li class="atomic group">
+            <fieldset>
+              <legend> <span class="label">Item 1</span> <small class="hint">Enter details as found in ArchiveSearch or Online Indexes</small> </legend>
+              <ol class="questions compact">
+                <li>
+                  <label for="item-1-id-or-title"> <span class="label">Item 1 ID or Title</span> <abbr title="(required)" class="required">*</abbr> </label>
+                  <input type="text" name="item-1-id-or-title" size="30" required id="item-1-id-or-title" />
+                </li>
+                <li>
+                  <label for="item-1-full-entry-details-or-description"> <span class="label">Item 1 full entry details or description</span> <abbr title="(required)" class="required">*</abbr> </label>
+                  <textarea name="item-1-full-entry-details-or-description" rows="2" cols="40" required id="item-1-full-entry-details-or-description"></textarea>
+                </li>
+                <li id="hdnUrl">    
+                  <label for="item-url"><span class="label">Item URL</span> <small class="hint"></small> </label><input type="text" name="item-url" size="40" id="item-url" />  
+                </li>
+              </ol>
+            </fieldset>
+          </li>
+          <li class="atomic group">
+            <fieldset>
+              <legend> <span class="label">Item 2</span> <small class="hint">Enter details as found in ArchiveSearch or Online Indexes</small> </legend>
+              <ol class="questions compact">
+                <li>
+                  <label for="item-2-id-or-title"> <span class="label">Item 2 ID or Title</span> </label>
+                  <input type="text" name="item-2-id-or-title" size="30" id="item-2-id-or-title" />
+                </li>
+                <li>
+                  <label for="item-2-full-entry-details-or-description"> <span class="label">Item 2 full entry details or description</span></label>
+                  <textarea name="item-2-full-entry-details-or-description" rows="2" cols="40" id="item-2-full-entry-details-or-description"></textarea>
+                </li>
+              </ol>
+            </fieldset>
+          </li>
+          <li class="atomic group">
+            <fieldset>
+              <legend> <span class="label">Item 3</span> <small class="hint">Enter details as found in ArchiveSearch or Online Indexes</small> </legend>
+              <ol class="questions compact">
+                <li>
+                  <label for="item-3-id-or-title"> <span class="label">Item 3 ID or Title</span> </label>
+                  <input type="text" name="item-3-id-or-title" size="30" id="item-3-id-or-title" />
+                </li>
+                <li>
+                  <label for="item-3-full-entry-details-or-description"> <span class="label">Item 3 full entry details or description</span></label>
+                  <textarea name="item-3-full-entry-details-or-description" rows="2" cols="40" id="item-3-full-entry-details-or-description"></textarea>
+                </li>
+              </ol>
+            </fieldset>
+          </li>
+          <li>
+            <p></p>
+            <div class="status info">
+              <p>If you need more than 3 please return to this form after submitting this request and complete it with the additional items.</p>
+            </div>
+          </li>
+        </ol>
+      </fieldset>
+    </li>
+    <li class="section">
+      <fieldset>
+        <legend> <span class="h2">Copy type</span> <small class="hint relevance">(If you chose ‘Yes’ above)</small> </legend>
+        <ol class="questions">
+          <li>
+            <fieldset>
+              <legend> <span class="label">Preferred copy type</span> <abbr title="(required)" class="required">*</abbr> <small class="hint">Would you like to receive a copy by email or a physical copy? Please note: Depending on what you request, the Email option is best, however if the number of items is high we may need to send a physical copy instead.</small> </legend>
+              <ul class="choices compact">
+                <li>
+                  <input type="radio" name="preferred-copy-type" value="Email" required id="preferred-copy-type-email" />
+                  <label for="preferred-copy-type-email">Email</label>
+                </li>
+                <li>
+                  <input type="radio" name="preferred-copy-type" value="Physical copy" required id="preferred-copy-type-physical-copy" />
+                  <label for="preferred-copy-type-physical-copy">Physical copy</label>
+                </li>
+              </ul>
+            </fieldset>
+          </li>
+          <li>
+            <fieldset>
+              <legend> <span class="label">Physical copy options</span> <small class="hint relevance">(If you chose ‘Physical copy’ above)</small> <abbr title="(required)" class="required">*</abbr> <small class="hint">Would you like a photocopy, Printed photographic image (from scan) or a digital copy scanned to CD. Not all options are available for all media.</small> </legend>
+              <ul class="choices compact">
+                <li>
+                  <input type="radio" name="physical-copy-options" value="CD or USB" required id="physical-copy-options-cd-or-usb" />
+                  <label for="physical-copy-options-cd-or-usb">CD or USB</label>
+                </li>
+                <li>
+                  <input type="radio" name="physical-copy-options" value="Printed photographic image" required id="physical-copy-options-printed-photographic-image" />
+                  <label for="physical-copy-options-printed-photographic-image">Printed photographic image</label>
+                </li>
+                <li>
+                  <input type="radio" name="physical-copy-options" value="Photocopy" required id="physical-copy-options-photocopy" />
+                  <label for="physical-copy-options-photocopy">Photocopy</label>
+                </li>
+              </ul>
+            </fieldset>
+          </li>
+          <li>
+            <fieldset>
+              <legend> <span class="label">Photocopy options</span> <small class="hint relevance">(If you chose ‘Photocopy’ above)</small> <abbr title="(required)" class="required">*</abbr> </legend>
+              <ul class="choices compact">
+                <li>
+                  <input type="radio" name="photocopy-options" value="Colour" required id="photocopy-options-colour" />
+                  <label for="photocopy-options-colour">Colour</label>
+                </li>
+                <li>
+                  <input type="radio" name="photocopy-options" value="Black and white (Grayscale)" required id="photocopy-options-black-and-white-grayscale" />
+                  <label for="photocopy-options-black-and-white-grayscale">Black and white (Grayscale)</label>
+                </li>
+              </ul>
+            </fieldset>
+          </li>
+          <li>
+            <fieldset>
+              <legend> <span class="label">Printed photographic image options</span> <small class="hint relevance">(If you chose ‘Printed photographic image’ above)</small> <abbr title="(required)" class="required">*</abbr> </legend>
+              <ul class="choices compact">
+                <li>
+                  <input type="radio" name="printed-photographic-image-options" value="5x7 (12.5x18cm)" required id="printed-photographic-image-options-5x7-12-5x18cm" />
+                  <label for="printed-photographic-image-options-5x7-12-5x18cm">5x7 (12.5x18cm)</label>
+                </li>
+                <li>
+                  <input type="radio" name="printed-photographic-image-options" value="8x10 (20x25cm)" required id="printed-photographic-image-options-8x10-20x25cm" />
+                  <label for="printed-photographic-image-options-8x10-20x25cm">8x10 (20x25cm)</label>
+                </li>
+              </ul>
+            </fieldset>
+          </li>
+          <li>
+            <fieldset id="name1">
+              <legend> <span class="label">File type</span> <small class="hint relevance">(If you chose ‘CD or USB’ above)</small> </legend>
+              <ul class="choices">
+                <li>
+                  <input type="checkbox" name="file-type-jpg" value="JPG" id="file-type-jpg" />
+                  <label for="file-type-jpg">JPG</label>
+                </li>
+                <li>
+                  <input type="checkbox" name="file-type-pdf" value="PDF" id="file-type-pdf" />
+                  <label for="file-type-pdf">PDF</label>
+                </li>
+                <li>
+                  <input type="checkbox" name="file-type-tiff" value="TIFF" id="file-type-tiff" />
+                  <label for="file-type-tiff">TIFF</label>
+                </li>
+              </ul>
+            </fieldset>
+          </li>
+          <li>
+            <fieldset>
+              <legend> <span class="label">Resolution</span> <small class="hint relevance">(If you chose ‘CD or USB’ above)</small> <abbr title="(required)" class="required">*</abbr> <small class="hint">Standard resolution is 300ppi (pixels per inch)</small> </legend>
+              <ul class="choices compact">
+                <li>
+                  <input type="radio" name="resolution" value="Standard" required id="resolution-standard" />
+                  <label for="resolution-standard">Standard</label>
+                </li>
+                <li>
+                  <input type="radio" name="resolution" value="Other" required id="resolution-other" />
+                  <label for="resolution-other">Other</label>
+                </li>
+              </ul>
+            </fieldset>
+          </li>
+          <li>
+            <label for="other-resolution"> <span class="label">Other resolution</span> <small class="hint relevance">(If you chose ‘Other’ above)</small> <abbr title="(required)" class="required">*</abbr> <small class="hint">Only required if you prefer a resolution other than standard 300ppi (pixels per inch)</small> </label>
+            <input type="text" name="other-resolution" size="20" required id="other-resolution" />
+          </li>
+        </ol>
+      </fieldset>
+
+    </li>
+    <li class="select">
+    <fieldset>
+        <div id="ifTerms" style="display:none">
+              <legend> <span class="label">Terms and Conditions or Agreement</span> </legend>          
+        <div class="instructions"> 
+              <p>Text has not been provided yet.</p>
+              <p>An example agreement from the Scientific Data Supply form:</p>
+              <p>Have you have read our Legal statements, available at http://www.ehp.qld.gov.au/legal/index.html and understand and accept them as part of your agreement in accessing this information?</p>
+        </div>
+          <ul class="choices"> <li>  
+          <input type="checkbox" name="i-agree-to-the-terms-and-conditions" value="I agree to the terms and conditions" id="i-agree-to-the-terms-and-conditions-i-agree-to-the-terms-and-conditions" />
+          <label for="i-agree-to-the-terms-and-conditions-i-agree-to-the-terms-and-conditions">I agree to the terms and conditions</label>
+        </li>
+      </ul>
+     </div>
+    </fieldset>
+    </li>
+    <li class="section">
+      <fieldset>
+        <legend> <span class="h2">Contact details</span> <small class="hint relevance">(If you chose ‘I agree to the terms and conditions’ above)</small> </legend>
+        <ol class="questions">
+          <li class="atomic group">
+            <fieldset>
+              <legend> <span class="label">Name</span> </legend>
+              <ol class="questions compact">
+                <li>
+                  <label for="given-name1"> <span class="label">Given name</span> <abbr class="required" title="(required)">*</abbr> </label>
+                  <input name="given-name1" size="15" required type="text" id="given-name1" />
+                </li>
+                <li>
+                  <label for="family-name1"> <span class="label">Family name</span> <abbr class="required" title="(required)">*</abbr> </label>
+                  <input name="family-name1" size="15" required type="text" id="family-name1" />
+                </li>
+              </ol>
+            </fieldset>
+          </li>
+          <li>
+            <label for="email1"> <span class="label">Email</span> <abbr title="(required)" class="required">*</abbr> <small class="hint">Example: jane.smart@example.com</small> </label>
+            <input type="email" name="email1" size="40" required id="email1" />
+          </li>
+          <li>
+            <label for="phone2"> <span class="label">Phone</span> <abbr title="(required)" class="required">*</abbr> <small class="hint">Home, mobile or work number</small> </label>
+            <input type="tel" name="phone2" size="20" required id="phone2" />
+          </li>
+          <li class="atomic group">
+            <fieldset>
+              <legend> <span class="label">Address</span> </legend>
+              <ol class="questions">
+                <li>
+                  <label for="streetaddress11"> <span class="label">Address line 1</span> <abbr title="(required)" class="required">*</abbr> </label>
+                  <input type="text" name="streetaddress11" size="20" value="" required id="streetaddress11" />
+                </li>
+                <li>
+                  <label for="streetaddress21"> <span class="label">Address line 2</span> </label>
+                  <input type="text" name="streetaddress21" size="20" value="" id="streetaddress21" />
+                </li>
+                <li>
+                  <label for="streetaddress31"> <span class="label">Address line 3</span> </label>
+                  <input type="text" name="streetaddress31" size="20" value="" id="streetaddress31" />
+                </li>
+                <li class="group">
+                  <ol class="questions compact">
+                    <li>
+                      <label for="town1"> <span class="label">Town, city or suburb</span> <abbr title="(required)" class="required">*</abbr> </label>
+                      <input type="text" name="town1" size="20" value="" required id="town1" />
+                    </li>
+                    <li>
+                      <label for="state1"> <span class="label">State</span> <abbr title="(required)" class="required">*</abbr> </label>
+                      <input type="text" name="state1" size="5" value="QLD" required id="state1" />
+                    </li>
+                    <li>
+                      <label for="postcode1"> <span class="label">Postcode</span> <abbr title="(required)" class="required">*</abbr> </label>
+                      <input type="text" name="postcode1" size="5" value="" required id="postcode1" />
+                    </li>
+                  </ol>
+                </li>
+                <li>
+                  <label for="country1"> <span class="label">Country</span> <abbr title="(required)" class="required">*</abbr> </label>
+                  <input type="text" name="country1" size="20" value="Australia" required id="country1" />
+                </li>
+              </ol>
+            </fieldset>
+          </li>
+        </ol>
+      </fieldset>
+    </li>
+    <li class="atomic group">
+      <fieldset>
+        <legend> <span class="label">Understanding your privacy</span> <small class="hint relevance">(If you chose ‘I agree to the terms and conditions’ above)</small> </legend>
+        <ol class="questions compact">
+          <li class="footer">
+            <div class="instructions">
+              <p>Queensland State Archives is collection information on this form, including your personal information, for the purpose of responding to you. Queensland State Archives will not disclose your personal information to any other third parties or use it for another purpose, without your consent, unless authorised or required by law.</p>
+            </div>
+            <ul class="actions">
+              <li> <strong>
+                <input type="submit" value="Submit" name="understanding-your-privacy" id="understanding-your-privacy-submit" />
+                </strong> </li>
+            </ul>
+          </li>
+        </ol>
+      </fieldset>
+    </li>
+  </ol>
+</form>
+
+                         

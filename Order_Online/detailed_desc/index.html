@@ -1,0 +1,149 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-AU" xml:lang="en-AU">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+<title>Search results | DSITI | Queensland Government</title>
+<!--#set var="franchise" value="dsiti"-->
+<!--#set var="title" value="Search the records"-->
+<!--#include virtual="/assets/includes/global/head-assets.html"-->
+<meta content="Search the records of the Queensland State Archives." name="description" />
+<meta content="QSA, Queensland State Archives, archive search" name="keywords" />
+<link href="http://purl.org/dc/terms/" rel="schema.DCTERMS" />
+<link href="http://www.agls.gov.au/agls/terms/" rel="schema.AGLSTERMS" />
+<meta content="c=AU; o=The State of Queensland; ou=Department of Science, Information Technology, Innovation and the Arts; ou=Corporate and Shared Services" scheme="AGLSTERMS.GOLD" name="DCTERMS.creator" />
+<meta content="corporateName=The State of Queensland; jurisdiction=Queensland" scheme="AGLSTERMS.AglsAgent" name="DCTERMS.publisher" />
+<meta content="2017-01-24" name="DCTERMS.created" />
+<meta content="2017-01-24" name="DCTERMS.modified" />
+<meta name="DCTERMS.title" content="Search the records | DSITI" />
+<meta content="Search the records of the Queensland State Archives." name="DCTERMS.description" />
+<meta content="Government" scheme="AGLSTERMS.APAIS" name="DCTERMS.subject" />
+<!--#include virtual="/assets/includes/global/head-meta-identifier.html"-->
+<meta content="Text" scheme="DCTERMS.DCMIType" name="DCTERMS.type" />
+<meta content="guidelines" scheme="AGLSTERMS.agls-document" name="AGLSTERMS.documentType" />
+<meta content="all" scheme="AGLSTERMS.agls-audience" name="DCTERMS.audience" />
+<meta content="Queensland" scheme="AGLSTERMS.AglsJuri" name="DCTERMS.jurisdiction" />
+<meta content="http://creativecommons.org/licenses/by/3.0/au/" scheme="DCTERMS.URI" name="DCTERMS.license" />
+<script type="text/javascript" src="/dsiti/assets/includes/js/fetchDetails.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+    var table = document.getElementById("detailsDispTab");
+    var selId = getDetails.getRecordIdValue();
+    var selResourceId = getDetails.getResIdValue();
+    if(selId!=null && selId!="" && selResourceId!=null && selResourceId!=""){
+        var strDataObj = getDetails.sqlQuery(selId,selResourceId,function successCallback(strData){
+          var strDatDetails =strData.result.records[0];
+          $.each(strDatDetails, function( index, value ) {
+            if(index != "_full_text" && index != "_id"){
+                row = table.insertRow(1);
+                var cell1 = row.insertCell(0);
+                var cell2 = row.insertCell(1);
+                cell1.innerHTML = index.bold().fontsize(3);
+                cell2.innerHTML = value;
+          }
+          });
+
+        }, function errorCallback(strErrData){
+            $('#errMsg').show();
+            $('#detailsDispTab').hide();  
+        });
+    }else{
+        $('#errMsg').show();
+        $('#detailsDispTab').hide();  
+    }
+    
+    });
+    </script>
+</head>
+<body class="residents dsiti" id="qld-gov-au">
+<!-- noindex -->
+<!--#include virtual="/assets/includes/global/header.html"-->
+<!-- endnoindex -->
+<div id="page-container">
+<div class="max-width">
+<!-- noindex -->
+<div id="breadcrumbs">
+<h2>You are here:</h2>
+<ol>
+<!--#include virtual="/assets/includes/global/breadcrumb-agency.html"-->
+<li>
+<a href="/recreation/">Recreation, sport and arts</a>
+</li>
+<li>
+<a href="/recreation/arts/">Arts, culture and heritage</a>
+</li>
+<li>
+<a href="/recreation/arts/heritage/">Heritage</a>
+</li>
+<li>
+<a href="#">Queenland's archives</a>
+</li>
+<li>
+<a href="/dsiti/qsa/search/">Search the records</a>
+</li>
+<li class="last-child">Search results</li>
+</ol>
+</div>
+<!-- endnoindex -->
+<div id="content-container">
+<div id="content">
+<div class="article">
+<div class="box-sizing">
+<div id="article" class="border">
+<!--#include virtual="/assets/includes/global/global-alert.html"-->
+<h1>Item Details</h1>
+<!--#include virtual="/assets/includes/global/page-options-pre.html"-->
+<p><div id="errMsg" class="status warn" style="display:none">
+    <p>An error has occured. Please try again.</p>
+  	</div>
+   <div style="max-height: 400px; overflow-y: scroll; overflow-x: hidden;">
+    <table id="detailsDispTab" name="detailsDispTab" class="stripe">
+        <tr style="background-color:#13578b; color:white;"><td><b>Title</b></td><td><b>Details</b></td></tr>
+    </table>  
+   </div>
+</p>
+
+</div>
+</div>
+</div>
+</div>
+<div id="asides">
+<div class="box-sizing">
+<div class="border">
+<!--#include virtual="/assets/includes/global/global-aside.html"-->
+</div>
+</div>
+</div>
+<div id="meta-wrapper">
+<div class="meta-box-sizing">
+<div class="border">
+<div id="document-properties">
+<div class="box-sizing">
+<dl>
+<dt class="visuallyhidden">Licence</dt>
+<dd id="document-licence">
+<a title="Text available under Creative Commons Attribution 3.0 Australia (CC BY 3.0) licence" rel="license" href="http://creativecommons.org/licenses/by/3.0/au/">
+<img alt="Creative Commons Attribution 3.0 Australia (CC BY 3.0)" src="/assets/v2/images/licences/by-80x15.png" />
+</a>
+</dd>
+<dt>Last updated</dt>
+<dd>24 January 2017</dd>
+</dl>
+</div>
+</div>
+<!--#include virtual="/assets/includes/global/page-options-post.html"-->
+</div>
+</div>
+</div>
+<!-- noindex -->
+</div>
+<div id="nav-section">
+<div class="box-sizing">
+<!--#include virtual = "/dsiti/qsa/assets/includes/search-nav.html"-->
+</div>
+</div>
+</div>
+</div>
+<!--#include virtual="/assets/includes/global/footer.html"-->
+<!-- endnoindex -->
+</body>
+</html>
