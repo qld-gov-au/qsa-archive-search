@@ -42,7 +42,7 @@ class CategoryService {
                     return `${query} "${field}" AS "${field.toUpperCase()}"`;
                 else
                     return `${query}, "${field}" AS "${field.toUpperCase()}"`;
-            }, 'SELECT');
+            }, `SELECT '${resourceId}' AS "RESOURCE ID"`);
 
             tempQuery += ` FROM "${resourceId}"`;
         } else {

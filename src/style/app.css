@@ -11,6 +11,10 @@ tr.detailedInfoRow td {
     border-bottom: 1px solid #000 !important;
 }
 
+.clickable {
+    cursor: pointer;
+}
+
 tr.summary {
     cursor: pointer;
 }
@@ -51,9 +55,7 @@ tr.summary {
 }
 
 .search-button {
-    background-color: #41548B;
-    cursor: pointer;
-    color: white;
+    margin-top: 5px;
 }
 
 .qsa-button {

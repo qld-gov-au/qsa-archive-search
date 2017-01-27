@@ -1,13 +1,11 @@
 <!--#include virtual="/assets/includes/global/global-aside.html"-->
 <div class="aside tip">
-    <h2 tabIndex="0">Download full CSV file</h2>
+    <h2 tabIndex="0">Full index</h2>
     <div class="status info" ng-show="!vm.selectedIndex.resources">
         Select an index to see download links
     </div>
+    <p ng-show="vm.selectedIndex.resources">Download the full index below</p>
     <ul>
         <li ng-repeat="resource in vm.selectedIndex.resources"><a href="{{ resource.download }}">{{ resource.resourceName }}</a></li>
     </ul>
-</div>
-<div class="aside">
-    <p><a href="#page-feedback">Leave feedback!</a></p>
 </div>

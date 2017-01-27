@@ -1,6 +1,7 @@
 class AppCtrl {
     showWarning = false;
     showFilterWarning = false;
+    showClearResearchButton = false;
     isSearching = false;
     selectedCategoryKey = '';
     selectedCategory = {};
@@ -69,6 +70,7 @@ class AppCtrl {
         this.warningMessage = message;
         this.showWarning = true;
         this.isSearching = false;
+        this.scrollToAppHeader();
     }
 
     searchResults() {
@@ -95,9 +97,10 @@ class AppCtrl {
 
                     let columns = this.DataTablesProvider.setColumns(this.selectedIndex.primary);
 
-                    let renderSuccess = this.DataTablesProvider.renderTable(this.selectedIndex.primary, resourceId, columns, data.records,
+                    let renderSuccess = this.DataTablesProvider.renderTable(this.selectedIndex, columns, data.records,
                         () => {
                             this.isSearching = false;
+                            this.showClearResearchButton = true;
                             this.resultCategoryName = this.selectedCategory.categoryName;
                             this.resultIndexName = this.selectedIndex.indexName;
                             this.scrollToResult();
@@ -127,6 +130,31 @@ class AppCtrl {
 
     scrollToResult() {
         angular.element('body').scrollTo('#result-block');
+    }
+
+    scrollToAppHeader() {
+        angular.element('body').scrollTo('#app-header');
+    }
+
+    scrollToCategories() {
+        angular.element('body').scrollTo('#index-categories');
+    }
+
+    clearSearch() {
+        this.showWarning = false;
+        this.showFilterWarning = false;
+        this.showClearResearchButton = false;
+        this.isSearching = false;
+        this.selectedCategoryKey = '';
+        this.selectedCategory = {};
+        this.selectedIndexKey = '';
+        this.selectedIndex = {};
+        this.resultCategoryName = '';
+        this.resultIndexName = '';
+        this.filters = [];
+        this.suggestions = [];
+        this.searchResultStyle.display = 'none';
+        this.scrollToAppHeader();
     }
 }
 

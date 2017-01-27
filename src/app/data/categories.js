@@ -12,6 +12,8 @@ export default {
                 "indexName": "Aboriginal War Census Returns 1915-1916",
                 "searchable": ["GIVEN NAME/S", "LAST NAME", "DISTRICT", "TOWN"],
                 "primary": ["GIVEN NAME/S", "LAST NAME", "TOWN", "DIGITAL IMAGE"],
+                "noResultLink": "https://data.qld.gov.au/en/dataset/aboriginal-war-census-1915-to-1916/resource/306fcd00-26ea-44fa-914f-1476732f6b98",
+                "itemTitleField": "",
                 "resources": [{
                     "resourceName": "Aboriginal War Census Returns 1915-1916",
                     "resourceId": "306fcd00-26ea-44fa-914f-1476732f6b98",
@@ -30,6 +32,8 @@ export default {
                 "indexName": "Australian South Sea Islanders 1867-1908",
                 "searchable": ["GIVEN NAME/S", "LAST NAME"],
                 "primary": ["GIVEN NAME/S", "LAST NAME"],
+                "noResultLink": "https://data.qld.gov.au/en/dataset/australian-south-sea-islanders-1867-to-1908",
+                "itemTitleField": "",
                 "resources": [{
                     "resourceName": "Australian South Sea Islanders 1867-1908 - A-K",
                     "resourceId": "d1611bbd-ea9a-4212-93d9-ff79c5ca3879",
@@ -46,6 +50,8 @@ export default {
                 "indexName": "Coloured labour and asiatic aliens in Queensland 1913",
                 "searchable": ["GIVEN NAME/S", "LAST NAME", "BIRTHPLACE", "POLICE DISTRICT"],
                 "primary": ["GIVEN NAME/S", "LAST NAME", "BIRTHPLACE", "POLICE DISTRICT"],
+                "noResultLink": "https://data.qld.gov.au/en/dataset/coloured-labour-and-asiatic-aliens-in-queensland-1913/resource/34eed2da-aa3f-4cca-9e14-a4a770f3ade6",
+                "itemTitleField": "",
                 "resources": [{
                     "resourceName": "Coloured labour and asiatic aliens in Queensland 1913",
                     "resourceId": "34eed2da-aa3f-4cca-9e14-a4a770f3ade6",
@@ -64,6 +70,8 @@ export default {
                 "indexName": "Companies 1863-1959",
                 "searchable": ["NAME OF COMPANY", "OFFICE LOCATION", "DATE OF REGISTRATION"],
                 "primary": ["NAME OF COMPANY", "OFFICE LOCATION", "DATE OF REGISTRATION"],
+                "noResultLink": "https://data.qld.gov.au/en/dataset/companies-1863-to-1959/resource/fd73f8e7-5fdf-4b98-9702-d17da31d1845",
+                "itemTitleField": "File no",
                 "resources": [{
                     "resourceName": "Companies 1863-1959",
                     "resourceId": "fd73f8e7-5fdf-4b98-9702-d17da31d1845",
@@ -76,6 +84,8 @@ export default {
                 "indexName": "Stage licences 1891-1904",
                 "searchable": ["LOCALITY", "BUILDING NAME", "YEAR"],
                 "primary": ["LOCALITY", "BUILDING NAME", "YEAR", "DIGITAL IMAGE"],
+                "noResultLink": "https://data.qld.gov.au/en/dataset/stage-licences-1891-to-1904/resource/0db9f486-d7e2-49bc-b511-0588d7d5724d",
+                "itemTitleField": "Page no",
                 "resources": [{
                     "resourceName": "Stage licences 1891-1904",
                     "resourceId": "0db9f486-d7e2-49bc-b511-0588d7d5724d",
@@ -94,6 +104,8 @@ export default {
                 "indexName": "Chronological register of convicts 1824-1839",
                 "searchable": ["GIVEN NAME/S", "LAST NAME", "DATE OF CONVICTION", "NAME OF SHIP"],
                 "primary": ["GIVEN NAME/S", "LAST NAME", "DATE OF CONVICTION", "DIGITAL IMAGE"],
+                "noResultLink": "https://data.qld.gov.au/en/dataset/convict-register-chronological-1824-to-1839/resource/f8d23116-be63-473c-bc08-47f5e21ed363",
+                "itemTitleField": "",
                 "resources": [{
                     "resourceName": "Chronological register of convicts 1824-1839",
                     "resourceId": "f8d23116-be63-473c-bc08-47f5e21ed363",
@@ -106,6 +118,8 @@ export default {
                 "indexName": "List of prisoners 1839",
                 "searchable": ["GIVEN NAME/S", "LAST NAME", "SHIP TO MORETON BAY", "DATE"],
                 "primary": ["GIVEN NAME/S", "LAST NAME", "DATE", "DIGITAL IMAGE"],
+                "noResultLink": "https://data.qld.gov.au/en/dataset/convict-register-chronological-1824-to-1839/resource/6ece07a7-35d1-4a49-ba4a-0a9878251924",
+                "itemTitleField": "",
                 "resources": [{
                     "resourceName": "List of prisoners 1839",
                     "resourceId": "6ece07a7-35d1-4a49-ba4a-0a9878251924",
@@ -118,6 +132,8 @@ export default {
                 "indexName": "Alphabetical list of prisoners",
                 "searchable": ["GIVEN NAME/S", "LAST NAME", "NATIVE PLACE", "AGE"],
                 "primary": ["GIVEN NAME/S", "LAST NAME", "NATIVE PLACE", "DIGITAL IMAGE"],
+                "noResultLink": "https://data.qld.gov.au/en/dataset/convict-register-chronological-1824-to-1839/resource/7a945dca-11b2-40f8-b8d6-917e3b4c8a26",
+                "itemTitleField": "",
                 "resources": [{
                     "resourceName": "Alphabetical list of prisoners",
                     "resourceId": "7a945dca-11b2-40f8-b8d6-917e3b4c8a26",
@@ -130,6 +146,8 @@ export default {
                 "indexName": "Monthly and half yearly returns for Moreton Bay 1829-1837",
                 "searchable": ["GIVEN NAME/S", "LAST NAME", "DATE"],
                 "primary": ["GIVEN NAME/S", "LAST NAME", "DATE", "DIGITAL IMAGE"],
+                "noResultLink": "https://data.qld.gov.au/en/dataset/monthly-and-half-yearly-returns-for-moreton-bay-1829-to-1837/resource/941c4af1-efd4-40a0-920f-16c9f1d42b21",
+                "itemTitleField": "",
                 "resources": [{
                     "resourceName": "Monthly and half yearly returns for Moreton Bay 1829-1837",
                     "resourceId": "941c4af1-efd4-40a0-920f-16c9f1d42b21",
@@ -142,6 +160,8 @@ export default {
                 "indexName": "St Helena prisoners 1863-1936",
                 "searchable": ["GIVEN NAME/S", "LAST NAME", "PRISON NO"],
                 "primary": ["GIVEN NAME/S", "LAST NAME", "PRISON NO"],
+                "noResultLink": "https://data.qld.gov.au/en/dataset/st-helena-prisoner-index-1863-to-1936/resource/00927ffb-3ff7-4732-b209-744750541d38",
+                "itemTitleField": "",
                 "resources": [{
                     "resourceName": "St Helena prisoners 1863-1936",
                     "resourceId": "00927ffb-3ff7-4732-b209-744750541d38",
@@ -154,6 +174,8 @@ export default {
                 "indexName": "Prisoners discharged, Toowoomba 1869-1879",
                 "searchable": ["GIVEN NAME/S", "LAST NAME", "DATE DISCHARGED"],
                 "primary": ["GIVEN NAME/S", "LAST NAME", "DATE DISCHARGED"],
+                "noResultLink": "https://data.qld.gov.au/en/dataset/indextoprisonerstriedtoowoomba1864-1903-csv/resource/c1828191-1d4a-4518-b638-79fa5295cfe7",
+                "itemTitleField": "",
                 "resources": [{
                     "resourceName": "Prisoners discharged, Toowoomba 1869-1879",
                     "resourceId": "c1828191-1d4a-4518-b638-79fa5295cfe7",
@@ -166,6 +188,8 @@ export default {
                 "indexName": "Prisoners tried, Toowoomba 1864 to 1903",
                 "searchable": ["GIVEN NAME/S", "LAST NAME", "COURT SITTING LOCATION", "DATE OF SITTING"],
                 "primary": ["GIVEN NAME/S", "LAST NAME", "COURT SITTING LOCATION", "DATE OF SITTING"],
+                "noResultLink": "https://data.qld.gov.au/en/dataset/indextoprisonerstriedtoowoomba1864-1903-csv/resource/96c31de0-78da-4754-8793-750e370a3fdc",
+                "itemTitleField": "",
                 "resources": [{
                     "resourceName": "Prisoners tried, Toowoomba 1864 to 1903",
                     "resourceId": "96c31de0-78da-4754-8793-750e370a3fdc",
@@ -178,6 +202,8 @@ export default {
                 "indexName": "Prisoners admitted, Toowoomba 1895 to 1906",
                 "searchable": ["GIVEN NAME/S", "LAST NAME", "DATE CONVICTED", "PRISONER NO"],
                 "primary": ["GIVEN NAME/S", "LAST NAME", "DATE CONVICTED", "PRISONER NO"],
+                "noResultLink": "https://data.qld.gov.au/en/dataset/indextoprisonerstriedtoowoomba1864-1903-csv/resource/9618a129-4778-4c59-9c5b-c4ff47a180e2",
+                "itemTitleField": "",
                 "resources": [{
                     "resourceName": "Prisoners admitted, Toowoomba 1895 to 1906",
                     "resourceId": "9618a129-4778-4c59-9c5b-c4ff47a180e2",
@@ -190,6 +216,8 @@ export default {
                 "indexName": "Female prisoners admitted, Toowoomba 1887 to 1891",
                 "searchable": ["GIVEN NAME/S", "LAST NAME", "DATE OF SENTENCE", "DATE OF RECEIPT IN GAOL"],
                 "primary": ["GIVEN NAME/S", "LAST NAME", "DATE OF SENTENCE", "DATE OF RECEIPT IN GAOL"],
+                "noResultLink": "https://data.qld.gov.au/en/dataset/indextoprisonerstriedtoowoomba1864-1903-csv/resource/226194c4-116d-47a8-a474-131f25f7f93c",
+                "itemTitleField": "",
                 "resources": [{
                     "resourceName": "Female prisoners admitted, Toowoomba 1887 to 1891",
                     "resourceId": "226194c4-116d-47a8-a474-131f25f7f93c",
@@ -208,6 +236,8 @@ export default {
                 "indexName": "Criminal depositions 1861-1885",
                 "searchable": ["GIVEN NAME/S", "LAST NAME"],
                 "primary": ["GIVEN NAME/S", "LAST NAME"],
+                "noResultLink": "https://data.qld.gov.au/en/dataset/criminal-depositions-1861-to-1885/resource/cb74e964-85df-4261-a4c6-4d1be5702f9d",
+                "itemTitleField": "",
                 "resources": [{
                     "resourceName": "Criminal depositions 1861-1885",
                     "resourceId": "cb74e964-85df-4261-a4c6-4d1be5702f9d",
@@ -220,6 +250,8 @@ export default {
                 "indexName": "Divorces 1861-1894",
                 "searchable": ["GIVEN NAME/S", "LAST NAME", "DISTRICT"],
                 "primary": ["GIVEN NAME/S", "LAST NAME", "DISTRICT"],
+                "noResultLink": "https://data.qld.gov.au/en/dataset/divorces-1861-to-1894/resource/9db95d63-c79c-4224-8811-6d414765089a",
+                "itemTitleField": "",
                 "resources": [{
                     "resourceName": "Divorces 1861-1894",
                     "resourceId": "9db95d63-c79c-4224-8811-6d414765089a",
@@ -232,6 +264,8 @@ export default {
                 "indexName": "Equity files 1857-1899",
                 "searchable": ["GIVEN NAME/S", "LAST NAME", "DATE FILED"],
                 "primary": ["GIVEN NAME/S", "LAST NAME", "DATE FILED"],
+                "noResultLink": "https://data.qld.gov.au/en/dataset/equity-files-1857-to-1899/resource/80c49c0a-36f8-47ab-a3ae-a63682385637",
+                "itemTitleField": "",
                 "resources": [{
                     "resourceName": "Equity files 1857-1899",
                     "resourceId": "80c49c0a-36f8-47ab-a3ae-a63682385637",
@@ -244,6 +278,8 @@ export default {
                 "indexName": "Inquests 1859-1902",
                 "searchable": ["GIVEN NAME/S", "LAST NAME", "YEAR"],
                 "primary": ["GIVEN NAME/S", "LAST NAME", "YEAR"],
+                "noResultLink": "https://data.qld.gov.au/en/dataset/inquests-1859-to-1902/resource/68bbc9ba-7c9f-46f4-98a9-de7d3e66a8f5",
+                "itemTitleField": "",
                 "resources": [{
                     "resourceName": "Inquests 1859-1902",
                     "resourceId": "68bbc9ba-7c9f-46f4-98a9-de7d3e66a8f5",
@@ -256,6 +292,8 @@ export default {
                 "indexName": "Instruments of renunciation 1915-1983",
                 "searchable": ["GIVEN NAME/S", "LAST NAME", "DATE OF DEATH", "DATE FILED"],
                 "primary": ["GIVEN NAME/S", "LAST NAME", "DATE OF DEATH", "DATE FILED"],
+                "noResultLink": "https://data.qld.gov.au/en/dataset/instruments-renunciation-1915-to-1983/resource/782f6dd9-0d13-43c4-acf8-389883dcd0fa",
+                "itemTitleField": "",
                 "resources": [{
                     "resourceName": "Instruments of renunciation 1915-1983",
                     "resourceId": "782f6dd9-0d13-43c4-acf8-389883dcd0fa",
@@ -268,6 +306,8 @@ export default {
                 "indexName": "Justices of the Peace 1857-1957",
                 "searchable": ["GIVEN NAME/S", "LAST NAME", "OATH NO", "DATE OF OATH"],
                 "primary": ["GIVEN NAME/S", "LAST NAME", "OATH NO", "DATE OF OATH"],
+                "noResultLink": "https://data.qld.gov.au/en/dataset/justices-of-the-peace-1857-to-1922/resource/327f3a54-cf69-4f2d-9872-147cfeb45aa0",
+                "itemTitleField": "",
                 "resources": [{
                     "resourceName": "Justices of the Peace 1857-1957",
                     "resourceId": "327f3a54-cf69-4f2d-9872-147cfeb45aa0",
@@ -280,6 +320,8 @@ export default {
                 "indexName": "Naturalisations 1851-1908",
                 "searchable": ["GIVEN NAME/S", "LAST NAME", "YEAR"],
                 "primary": ["GIVEN NAME/S", "LAST NAME", "YEAR"],
+                "noResultLink": "https://data.qld.gov.au/en/dataset/naturalisations-1851-to-1904/resource/7b5ddae5-78ef-4d8e-b800-56e6f30d26d5",
+                "itemTitleField": "",
                 "resources": [{
                     "resourceName": "Naturalisations 1851-1908",
                     "resourceId": "7b5ddae5-78ef-4d8e-b800-56e6f30d26d5",
@@ -292,6 +334,8 @@ export default {
                 "indexName": "Register of court fees 1885-1908",
                 "searchable": ["GIVEN NAME/S", "LAST NAME", "OFFENCE/ACT", "DATE"],
                 "primary": ["GIVEN NAME/S", "LAST NAME", "OFFENCE/ACT", "DATE"],
+                "noResultLink": "https://data.qld.gov.au/en/dataset/register-of-court-fees-marburg-1885-to-1908/resource/7e5f93ca-e956-4a27-a8ae-51fbb0e15f42",
+                "itemTitleField": "",
                 "resources": [{
                     "resourceName": "Register of court fees 1885-1908",
                     "resourceId": "7e5f93ca-e956-4a27-a8ae-51fbb0e15f42",
@@ -304,6 +348,8 @@ export default {
                 "indexName": "Trustee files 1889-1929",
                 "searchable": ["GIVEN NAME/S", "LAST NAME", "DATE OF DEATH", "TRUSTEE FILE NO"],
                 "primary": ["GIVEN NAME/S", "LAST NAME", "DATE OF DEATH", "TRUSTEE FILE NO"],
+                "noResultLink": "https://data.qld.gov.au/en/dataset/trustee-files-1889-to-1929/resource/0670ed05-f1a7-4b96-bd26-caa3f474e077",
+                "itemTitleField": "",
                 "resources": [{
                     "resourceName": "Trustee files 1889-1929",
                     "resourceId": "0670ed05-f1a7-4b96-bd26-caa3f474e077",
@@ -316,6 +362,8 @@ export default {
                 "indexName": "Wills 1857-1940",
                 "searchable": ["GIVEN NAME/S", "LAST NAME", "DISTRICT", "WILL NO"],
                 "primary": ["GIVEN NAME/S", "LAST NAME", "DISTRICT", "WILL NO"],
+                "noResultLink": "https://data.qld.gov.au/en/dataset/wills-1857-to-1940/resource/d595bb3e-7c7c-435e-b08d-448ed5f5fa23",
+                "itemTitleField": "",
                 "resources": [{
                     "resourceName": "Wills 1857-1940",
                     "resourceId": "d595bb3e-7c7c-435e-b08d-448ed5f5fa23",
@@ -334,6 +382,8 @@ export default {
                 "indexName": "Civil servants 1865-1867",
                 "searchable": ["GIVEN NAME/S", "LAST NAME", "DATE OF BIRTH", "OCCUPATION"],
                 "primary": ["GIVEN NAME/S", "LAST NAME", "DATE OF BIRTH", "OCCUPATION"],
+                "noResultLink": "https://data.qld.gov.au/en/dataset/civil-servants-1865-to-1867/resource/4614bd84-c2d9-475d-9610-7ca26c78b72b",
+                "itemTitleField": "",
                 "resources": [{
                     "resourceName": "Civil servants 1865-1867",
                     "resourceId": "4614bd84-c2d9-475d-9610-7ca26c78b72b",
@@ -346,6 +396,8 @@ export default {
                 "indexName": "Imperial pensions 1898-1912",
                 "searchable": ["GIVEN NAME/S", "LAST NAME"],
                 "primary": ["GIVEN NAME/S", "LAST NAME"],
+                "noResultLink": "https://data.qld.gov.au/en/dataset/imperial-pensions-1872-to-1915/resource/fa62cc28-ecb8-44cd-a2d5-d8f9cbe34df1",
+                "itemTitleField": "",
                 "resources": [{
                     "resourceName": "Imperial pensions 1898-1912",
                     "resourceId": "fa62cc28-ecb8-44cd-a2d5-d8f9cbe34df1",
@@ -358,6 +410,8 @@ export default {
                 "indexName": "Imperial pensions 1872-1915",
                 "searchable": ["GIVEN NAME/S", "LAST NAME", "DATE"],
                 "primary": ["GIVEN NAME/S", "LAST NAME", "DATE"],
+                "noResultLink": "https://data.qld.gov.au/en/dataset/imperial-pensions-1872-to-1915/resource/3416b4c1-b2ab-40cd-a7af-4b24c5f5c906",
+                "itemTitleField": "",
                 "resources": [{
                     "resourceName": "Imperial pensions 1872-1915",
                     "resourceId": "3416b4c1-b2ab-40cd-a7af-4b24c5f5c906",
@@ -370,6 +424,8 @@ export default {
                 "indexName": "Indigence cases 1899-1948",
                 "searchable": ["GIVEN NAME/S", "LAST NAME", "PLACE OF BIRTH OR LOCALITY", "DATE"],
                 "primary": ["GIVEN NAME/S", "LAST NAME", "PLACE OF BIRTH OR LOCALITY", "DATE"],
+                "noResultLink": "https://data.qld.gov.au/en/dataset/indigence-cases-1899-to-1948/resource/cd341174-5105-4c74-9e83-09944dca58c7",
+                "itemTitleField": "",
                 "resources": [{
                     "resourceName": "Indigence cases 1899-1948",
                     "resourceId": "cd341174-5105-4c74-9e83-09944dca58c7",
@@ -388,6 +444,8 @@ export default {
                 "indexName": "Rations issued to immigrants, Maryborough 1875-1884",
                 "searchable": ["GIVEN NAME/S", "LAST NAME", "DATE", "SHIP/PAGE NO"],
                 "primary": ["GIVEN NAME/S", "LAST NAME", "SHIP/PAGE NO", "DATE"],
+                "noResultLink": "https://data.qld.gov.au/en/dataset/assistant-immigration-agent-maryborough-1875-to-1884/resource/d1e8107a-2cdf-4bf7-ad31-5054ee5a0fd0",
+                "itemTitleField": "",
                 "resources": [{
                     "resourceName": "Rations issued to immigrants, Maryborough 1875-1884",
                     "resourceId": "d1e8107a-2cdf-4bf7-ad31-5054ee5a0fd0",
@@ -400,6 +458,8 @@ export default {
                 "indexName": "Immigrants nominated for passage, Maryborough 1884 to 1896",
                 "searchable": ["GIVEN NAME/S", "LAST NAME", "DATE"],
                 "primary": ["GIVEN NAME/S", "LAST NAME", "DATE", "TYPE"],
+                "noResultLink": "https://data.qld.gov.au/en/dataset/assistant-immigration-agent-maryborough-1884-to-1907/resource/5ed4ef62-d2f8-4664-8e16-9803ccbf59d4",
+                "itemTitleField": "",
                 "resources": [{
                     "resourceName": "Immigrants nominated for passage, Maryborough 1884 to 1896",
                     "resourceId": "5ed4ef62-d2f8-4664-8e16-9803ccbf59d4",
@@ -412,6 +472,8 @@ export default {
                 "indexName": "Nominated immigrants, Maryborough 1904 to 1907",
                 "searchable": ["GIVEN NAME/S", "LAST NAME", "DATE"],
                 "primary": ["GIVEN NAME/S", "LAST NAME", "DATE", "CERTIFICATE NO"],
+                "noResultLink": "https://data.qld.gov.au/en/dataset/assistant-immigration-agent-maryborough-1884-to-1907/resource/da032bf1-f7ea-4140-95e2-4ac198cd28ca",
+                "itemTitleField": "",
                 "resources": [{
                     "resourceName": "Nominated immigrants, Maryborough 1904 to 1907",
                     "resourceId": "da032bf1-f7ea-4140-95e2-4ac198cd28ca",
@@ -424,6 +486,8 @@ export default {
                 "indexName": "Assisted Immigration 1848-1912",
                 "searchable": ["GIVEN NAME/S", "LAST NAME", "DATE", "SHIP"],
                 "primary": ["GIVEN NAME/S", "LAST NAME", "DATE", "DIGITAL IMAGE"],
+                "noResultLink": "https://data.qld.gov.au/en/dataset/assisted-immigration-1848-to-1912",
+                "itemTitleField": "",
                 "resources": [{
                     "resourceName": "Assisted Immigration 1848-1912 - A",
                     "resourceId": "4d7a110c-f531-4688-9dda-b1c04ee16ebd",
@@ -524,6 +588,8 @@ export default {
                 "indexName": "Nominated immigrants 1908-1922",
                 "searchable": ["GIVEN NAME/S", "LAST NAME", "YEAR", "SHIP"],
                 "primary": ["GIVEN NAME/S", "LAST NAME", "YEAR", "SHIP"],
+                "noResultLink": "https://data.qld.gov.au/en/dataset/card-index-to-nominated-immigrants-1908-to-1922/resource/117c0985-e3e8-45f0-8c04-9cf52d9f9691",
+                "itemTitleField": "",
                 "resources": [{
                     "resourceName": "Nominated immigrants 1908-1922",
                     "resourceId": "117c0985-e3e8-45f0-8c04-9cf52d9f9691",
@@ -536,6 +602,8 @@ export default {
                 "indexName": "Immigration 1922-1940",
                 "searchable": ["GIVEN NAME/S", "LAST NAME", "DATE ARRIVED", "SHIP"],
                 "primary": ["GIVEN NAME/S", "LAST NAME", "DATE ARRIVED", "SHIP"],
+                "noResultLink": "https://data.qld.gov.au/en/dataset/immigration-1922-to-1940/resource/4ec2d8c1-da1d-496e-b244-ff34973f4834",
+                "itemTitleField": "",
                 "resources": [{
                     "resourceName": "Immigration 1922-1940",
                     "resourceId": "4ec2d8c1-da1d-496e-b244-ff34973f4834",
@@ -548,6 +616,8 @@ export default {
                 "indexName": "Indigence Cases 1899-1948",
                 "searchable": ["GIVEN NAME/S", "LAST NAME", "DATE", "PLACE OF BIRTH OR LOCALITY"],
                 "primary": ["GIVEN NAME/S", "LAST NAME", "DATE", "PLACE OF BIRTH OR LOCALITY"],
+                "noResultLink": "https://data.qld.gov.au/en/dataset/indigence-cases-1899-to-1948/resource/cd341174-5105-4c74-9e83-09944dca58c7",
+                "itemTitleField": "",
                 "resources": [{
                     "resourceName": "Indigence Cases 1899-1948",
                     "resourceId": "cd341174-5105-4c74-9e83-09944dca58c7",
@@ -560,6 +630,8 @@ export default {
                 "indexName": "Land orders 1861-1874",
                 "searchable": ["LAST NAME/COMPANY NAME", "YEAR", "LAND ORDER NO", "GIVEN NAME/S"],
                 "primary": ["LAST NAME/COMPANY NAME", "YEAR", "LAND ORDER NO", "GIVEN NAME/S"],
+                "noResultLink": "https://data.qld.gov.au/en/dataset/land-orders-1861-to-1874/resource/030e30af-0c04-427b-a2a1-74799c1f9798",
+                "itemTitleField": "",
                 "resources": [{
                     "resourceName": "Land orders 1861-1874",
                     "resourceId": "030e30af-0c04-427b-a2a1-74799c1f9798",
@@ -572,6 +644,8 @@ export default {
                 "indexName": "Land orders 1862-1878",
                 "searchable": ["LAST NAME/COMPANY NAME", "DATE ISSUED", "LAND ORDER NO", "GIVEN NAME/S"],
                 "primary": ["LAST NAME/COMPANY NAME", "DATE ISSUED", "LAND ORDER NO", "GIVEN NAME/S"],
+                "noResultLink": "https://data.qld.gov.au/en/dataset/land-orders-1862-to-1878/resource/77744aff-a5c3-4fdb-a6bb-502cde18f5fa",
+                "itemTitleField": "",
                 "resources": [{
                     "resourceName": "Land orders 1862-1878",
                     "resourceId": "77744aff-a5c3-4fdb-a6bb-502cde18f5fa",
@@ -584,6 +658,8 @@ export default {
                 "indexName": "Oronsay immigration 1925-1972",
                 "searchable": ["GIVEN NAME/S", "LAST NAME", "DATE OF ARRIVAL/START DATE"],
                 "primary": ["GIVEN NAME/S", "LAST NAME", "DATE OF ARRIVAL/START DATE"],
+                "noResultLink": "https://data.qld.gov.au/en/dataset/oronsay-immigration-1925-to-1972/resource/fbdbc235-45c3-4f55-96c4-29acfdd04c86",
+                "itemTitleField": "",
                 "resources": [{
                     "resourceName": "Oronsay immigration 1925-1972",
                     "resourceId": "fbdbc235-45c3-4f55-96c4-29acfdd04c86",
@@ -596,6 +672,8 @@ export default {
                 "indexName": "Passage certificates 1887-1906",
                 "searchable": ["GIVEN NAME/S", "LAST NAME", "DATE", "RECEIPT NO"],
                 "primary": ["GIVEN NAME/S", "LAST NAME", "DATE", "RECEIPT NO"],
+                "noResultLink": "https://data.qld.gov.au/en/dataset/passage-certificates-1887-to-1906/resource/c0127f32-3ebe-4aea-b360-b3e5cfcda6f3",
+                "itemTitleField": "",
                 "resources": [{
                     "resourceName": "Passage certificates 1887-1906",
                     "resourceId": "c0127f32-3ebe-4aea-b360-b3e5cfcda6f3",
@@ -608,6 +686,8 @@ export default {
                 "indexName": "Passport clearances 1923-1940",
                 "searchable": ["GIVEN NAME/S", "LAST NAME", "DATE OF ARRIVAL", "VESSEL"],
                 "primary": ["GIVEN NAME/S", "LAST NAME", "DATE OF ARRIVAL", "VESSEL"],
+                "noResultLink": "https://data.qld.gov.au/en/dataset/passport-registers-1926-to-1939/resource/5beccc15-89ec-4331-94dd-30d864cc5d12",
+                "itemTitleField": "",
                 "resources": [{
                     "resourceName": "Passport clearances 1923-1940",
                     "resourceId": "5beccc15-89ec-4331-94dd-30d864cc5d12",
@@ -620,6 +700,8 @@ export default {
                 "indexName": "Register of Immigrants 1864-1878",
                 "searchable": ["GIVEN NAME/S", "LAST NAME", "DATE OF ARRIVAL", "DEPOSITOR/APPLICANT"],
                 "primary": ["GIVEN NAME/S", "LAST NAME", "DATE OF ARRIVAL", "DEPOSITOR/APPLICANT"],
+                "noResultLink": "https://data.qld.gov.au/en/dataset/register-of-immigrants-1864-to-1878/resource/0c976207-a184-4605-b171-a65a76a2ad2e",
+                "itemTitleField": "",
                 "resources": [{
                     "resourceName": "Register of Immigrants 1864-1878",
                     "resourceId": "0c976207-a184-4605-b171-a65a76a2ad2e",
@@ -632,6 +714,8 @@ export default {
                 "indexName": "Register of immigrants, Toowoomba, 1880-1888",
                 "searchable": ["GIVEN NAME/S", "LAST NAME", "DATE", "SHIP"],
                 "primary": ["GIVEN NAME/S", "LAST NAME", "DATE", "SHIP"],
+                "noResultLink": "https://data.qld.gov.au/en/dataset/immigration-agenct-toowoomba-1880-to-1888/resource/68b5c1b3-c993-4a83-9bd8-d8ff4cffb375",
+                "itemTitleField": "",
                 "resources": [{
                     "resourceName": "Register of immigrants, Toowoomba, 1880-1888",
                     "resourceId": "68b5c1b3-c993-4a83-9bd8-d8ff4cffb375",
@@ -644,6 +728,8 @@ export default {
                 "indexName": "Registers of immigrants 1882-1938",
                 "searchable": ["GIVEN NAME/S", "LAST NAME", "DATE OF ARRIVAL", "SHIP"],
                 "primary": ["GIVEN NAME/S", "LAST NAME", "DATE OF ARRIVAL", "SHIP"],
+                "noResultLink": "https://data.qld.gov.au/en/dataset/registers-of-immigrants-1882-to-1938",
+                "itemTitleField": "",
                 "resources": [{
                     "resourceName": "Registers of immigrants 1882-1938 - A-K",
                     "resourceId": "2fd8cf6e-014c-4b6a-9b5d-14b778f58980",
@@ -660,6 +746,8 @@ export default {
                 "indexName": "Registers of immigrants, Brisbane 1885-1917",
                 "searchable": ["GIVEN NAME/S", "LAST NAME", "DATE OF ARRIVAL", "SHIP"],
                 "primary": ["GIVEN NAME/S", "LAST NAME", "DATE OF ARRIVAL", "SHIP"],
+                "noResultLink": "https://data.qld.gov.au/en/dataset/register-of-immigrants-brisbane-1885-to-1917/resource/54d9a8e4-8b5b-41fa-86ad-b94a40d1991a",
+                "itemTitleField": "",
                 "resources": [{
                     "resourceName": "Registers of immigrants, Brisbane 1885-1917",
                     "resourceId": "54d9a8e4-8b5b-41fa-86ad-b94a40d1991a",
@@ -678,6 +766,8 @@ export default {
                 "indexName": "Land Orders 1865 to 1866",
                 "searchable": ["GIVEN NAME/S", "LAST NAME", "DATE", "LAND ORDER NO"],
                 "primary": ["GIVEN NAME/S", "LAST NAME", "DATE", "LAND ORDER NO"],
+                "noResultLink": "https://data.qld.gov.au/en/dataset/land-orders-1865-to-1866/resource/52385733-f98a-4ef4-8c1f-0085c7cb0bd5",
+                "itemTitleField": "",
                 "resources": [{
                     "resourceName": "Land Orders 1865 to 1866",
                     "resourceId": "52385733-f98a-4ef4-8c1f-0085c7cb0bd5",
@@ -690,6 +780,8 @@ export default {
                 "indexName": "Mineral leases 1871-1940",
                 "searchable": ["NAME/COMPANY NAME", "FOLIO OR LEASE NO"],
                 "primary": ["NAME/COMPANY NAME", "FOLIO OR LEASE NO"],
+                "noResultLink": "https://data.qld.gov.au/en/dataset/mineral-leases-1871-to-1940/resource/71ad68af-323e-4d3e-9f9e-37128afac349",
+                "itemTitleField": "",
                 "resources": [{
                     "resourceName": "Mineral leases 1871-1940",
                     "resourceId": "71ad68af-323e-4d3e-9f9e-37128afac349",
@@ -702,6 +794,8 @@ export default {
                 "indexName": "Miners rights 1874-1880",
                 "searchable": ["GIVEN NAME/S", "LAST NAME", "LICENCE NO"],
                 "primary": ["GIVEN NAME/S", "LAST NAME", "LICENCE NO"],
+                "noResultLink": "https://data.qld.gov.au/en/dataset/miners-rights-1874-to-1880",
+                "itemTitleField": "",
                 "resources": [{
                     "resourceName": "Miners rights 1874-1880 - A-K",
                     "resourceId": "0bad313d-8839-4c83-a41c-9bcaccaa9b59",
@@ -718,6 +812,8 @@ export default {
                 "indexName": "Register of land sold 1842-1859",
                 "searchable": ["NAME OF PURCHASER", "DATE OF SALE", "PARISH/TOWN/PLACE", "LOT NO"],
                 "primary": ["NAME OF PURCHASER", "DATE OF SALE", "PARISH/TOWN/PLACE", "LOT NO"],
+                "noResultLink": "https://data.qld.gov.au/en/dataset/register-of-land-sold-1842-1859/resource/f53dfd13-970a-45ac-9567-d7c8fc2652b6",
+                "itemTitleField": "",
                 "resources": [{
                     "resourceName": "Register of land sold 1842-1859",
                     "resourceId": "f53dfd13-970a-45ac-9567-d7c8fc2652b6",
@@ -730,6 +826,8 @@ export default {
                 "indexName": "Register of lands 1861-1868",
                 "searchable": ["GIVEN NAME/S", "LAST NAME"],
                 "primary": ["GIVEN NAME/S", "LAST NAME"],
+                "noResultLink": "https://data.qld.gov.au/en/dataset/register-of-lands-1861-1868/resource/e1afdc88-d43a-4c30-bfa3-5f02cd2862ec",
+                "itemTitleField": "",
                 "resources": [{
                     "resourceName": "Register of lands 1861-1868",
                     "resourceId": "e1afdc88-d43a-4c30-bfa3-5f02cd2862ec",
@@ -742,6 +840,8 @@ export default {
                 "indexName": "Register of lands sold 1849-1861",
                 "searchable": ["GIVEN NAME/S", "LAST NAME", "DATE"],
                 "primary": ["GIVEN NAME/S", "LAST NAME", "DATE"],
+                "noResultLink": "https://data.qld.gov.au/en/dataset/register-lands-sold-1849-to-1861/resource/0bbbd847-7b15-4a3f-9f26-7aea561d3905",
+                "itemTitleField": "",
                 "resources": [{
                     "resourceName": "Register of lands sold 1849-1861",
                     "resourceId": "0bbbd847-7b15-4a3f-9f26-7aea561d3905",
@@ -752,8 +852,10 @@ export default {
                 "categoryName": "Lands",
                 "categoryKey": "LANDS",
                 "indexName": "Register of Pastoral Holdings 1863-1880",
-                "searchable": ["NAME OF STATION", "NAME OF RUNS COMPRISING STATION ", "LAND AGENT DISTRICT"],
-                "primary": ["NAME OF STATION", "NAME OF RUNS COMPRISING STATION ", "LAND AGENT DISTRICT"],
+                "searchable": ["NAME OF STATION", "NAME OF RUNS COMPRISING STATION", "LAND AGENT DISTRICT"],
+                "primary": ["NAME OF STATION", "NAME OF RUNS COMPRISING STATION", "LAND AGENT DISTRICT"],
+                "noResultLink": "https://data.qld.gov.au/en/dataset/register-pastoral-holdings-1863-to-1880/resource/460e3f22-df6f-4a84-9b67-7fc4b412c9c1",
+                "itemTitleField": "",
                 "resources": [{
                     "resourceName": "Register of Pastoral Holdings 1863-1880",
                     "resourceId": "460e3f22-df6f-4a84-9b67-7fc4b412c9c1",
@@ -766,6 +868,8 @@ export default {
                 "indexName": "Rents Payable Pastoral Runs Index 1860-1911",
                 "searchable": ["NAME OF RUN", "DISTRICT", "DATE"],
                 "primary": ["NAME OF RUN", "DISTRICT", "DATE"],
+                "noResultLink": "https://data.qld.gov.au/en/dataset/rents-payable-pastoral-runs-1860-to-1911/resource/b60e7d00-9591-4688-b9f1-1015f6bbb55e",
+                "itemTitleField": "",
                 "resources": [{
                     "resourceName": "Rents Payable Pastoral Runs Index 1860-1911",
                     "resourceId": "b60e7d00-9591-4688-b9f1-1015f6bbb55e",
@@ -778,6 +882,8 @@ export default {
                 "indexName": "Soldier Settlement 1917-1929",
                 "searchable": ["GIVEN NAME/S", "LAST NAME", "PARISH", "LOCALITY"],
                 "primary": ["GIVEN NAME/S", "LAST NAME", "PARISH", "LOCALITY"],
+                "noResultLink": "https://data.qld.gov.au/en/dataset/soldier-settlement-1917-to-1929/resource/18291d9f-29e6-40a3-8d98-515d89d56ca9",
+                "itemTitleField": "",
                 "resources": [{
                     "resourceName": "Soldier Settlement 1917-1929",
                     "resourceId": "18291d9f-29e6-40a3-8d98-515d89d56ca9",
@@ -790,6 +896,8 @@ export default {
                 "indexName": "Transfer of runs 1848-1874",
                 "searchable": ["NAME/COMPANY", "NAME OF RUN/STATION/DESCRIPTION", "DATE", "LAND AGENTS DISTRICT"],
                 "primary": ["NAME/COMPANY", "NAME OF RUN/STATION/DESCRIPTION", "DATE", "DIGITAL IMAGE"],
+                "noResultLink": "https://data.qld.gov.au/en/dataset/transfer-of-runs-1848-to-1874/resource/d2d5b14a-f5c5-4a08-90cb-714b322c8b59",
+                "itemTitleField": "",
                 "resources": [{
                     "resourceName": "Transfer of runs 1848-1874",
                     "resourceId": "d2d5b14a-f5c5-4a08-90cb-714b322c8b59",
@@ -808,6 +916,8 @@ export default {
                 "indexName": "Brisbane Hospital Admissions 1872-1887",
                 "searchable": ["GIVEN NAME/S", "LAST NAME", "DATE OF ADMISSION"],
                 "primary": ["GIVEN NAME/S", "LAST NAME", "DATE OF ADMISSION"],
+                "noResultLink": "https://data.qld.gov.au/en/dataset/brisbane-hospital-admissions-1872-to-1887/resource/93a375da-8ab0-4a01-b97d-a58e120021b2",
+                "itemTitleField": "",
                 "resources": [{
                     "resourceName": "Brisbane Hospital Admissions 1872-1887",
                     "resourceId": "93a375da-8ab0-4a01-b97d-a58e120021b2",
@@ -820,6 +930,8 @@ export default {
                 "indexName": "Brisbane Hospital registers of deaths 1899-1913",
                 "searchable": ["GIVEN NAME/S", "LAST NAME", "DATE OF DEATH"],
                 "primary": ["GIVEN NAME/S", "LAST NAME", "DATE OF DEATH", "AGE"],
+                "noResultLink": "https://data.qld.gov.au/en/dataset/brisbane-hospital-registers-of-deaths-1899-to-1913/resource/265df65a-372e-4f90-a6b8-5a47c30fc740",
+                "itemTitleField": "",
                 "resources": [{
                     "resourceName": "Brisbane Hospital registers of deaths 1899-1913",
                     "resourceId": "265df65a-372e-4f90-a6b8-5a47c30fc740",
@@ -832,6 +944,8 @@ export default {
                 "indexName": "Brisbane Hospital Registers Deaths 1933-1963",
                 "searchable": ["GIVEN NAME/S", "LAST NAME", "DATE OF DEATH"],
                 "primary": ["GIVEN NAME/S", "LAST NAME", "DATE OF DEATH", "AGE"],
+                "noResultLink": "https://data.qld.gov.au/en/dataset/brisbane-hospital-registers-of-deaths-1933-to-1963/resource/aa0c1fd9-297a-44e1-b032-adc563d3b646",
+                "itemTitleField": "",
                 "resources": [{
                     "resourceName": "Brisbane Hospital Registers Deaths 1933-1963",
                     "resourceId": "aa0c1fd9-297a-44e1-b032-adc563d3b646",
@@ -844,6 +958,8 @@ export default {
                 "indexName": "Consumptive patients index 1897-1902",
                 "searchable": ["GIVEN NAME/S", "LAST NAME", "DATE"],
                 "primary": ["GIVEN NAME/S", "LAST NAME", "DATE"],
+                "noResultLink": "https://data.qld.gov.au/en/dataset/consumptive-patients-1897-to-1902/resource/2a311e6a-17b9-47ad-ae02-0141935c8193",
+                "itemTitleField": "",
                 "resources": [{
                     "resourceName": "Consumptive patients index 1897-1902",
                     "resourceId": "2a311e6a-17b9-47ad-ae02-0141935c8193",
@@ -856,6 +972,8 @@ export default {
                 "indexName": "Dentist Apprentices 1903-1925",
                 "searchable": ["GIVEN NAME/S", "LAST NAME"],
                 "primary": ["GIVEN NAME/S", "LAST NAME"],
+                "noResultLink": "https://data.qld.gov.au/en/dataset/dental-board-1903-to-1932/resource/df6b283f-4b16-42cc-8332-4db43f93dd7c",
+                "itemTitleField": "",
                 "resources": [{
                     "resourceName": "Dentist Apprentices 1903-1925",
                     "resourceId": "df6b283f-4b16-42cc-8332-4db43f93dd7c",
@@ -868,6 +986,8 @@ export default {
                 "indexName": "Dental Board 1900-1931",
                 "searchable": ["GIVEN NAME/S", "LAST NAME", "DATE"],
                 "primary": ["GIVEN NAME/S", "LAST NAME", "DATE"],
+                "noResultLink": "https://data.qld.gov.au/en/dataset/dental-board-1903-to-1932/resource/cab24815-f422-4fc3-965c-0acbc5a51862",
+                "itemTitleField": "",
                 "resources": [{
                     "resourceName": "Dental Board 1900-1931",
                     "resourceId": "cab24815-f422-4fc3-965c-0acbc5a51862",
@@ -880,6 +1000,8 @@ export default {
                 "indexName": "Dentists 1903-1932",
                 "searchable": ["GIVEN NAME/S", "LAST NAME"],
                 "primary": ["GIVEN NAME/S", "LAST NAME"],
+                "noResultLink": "https://data.qld.gov.au/en/dataset/dental-board-1903-to-1932/resource/99661cb1-b77f-464d-b5e7-e837191b4cd6",
+                "itemTitleField": "",
                 "resources": [{
                     "resourceName": "Dentists 1903-1932",
                     "resourceId": "99661cb1-b77f-464d-b5e7-e837191b4cd6",
@@ -892,6 +1014,8 @@ export default {
                 "indexName": "Mackay Hospital Hospital Admissions 1891-1908",
                 "searchable": ["GIVEN NAME/S", "LAST NAME", "DATE OF ADMISSION", "AGE"],
                 "primary": ["GIVEN NAME/S", "LAST NAME", "DATE OF ADMISSION", "AGE"],
+                "noResultLink": "https://data.qld.gov.au/en/dataset/mackay-hospital-admissions-1891-to-1908/resource/4191fe95-9e82-4889-82c8-f58ded312db7",
+                "itemTitleField": "",
                 "resources": [{
                     "resourceName": "Mackay Hospital Hospital Admissions 1891-1908",
                     "resourceId": "4191fe95-9e82-4889-82c8-f58ded312db7",
@@ -904,6 +1028,8 @@ export default {
                 "indexName": "Nurses examinations 1912-1925",
                 "searchable": ["GIVEN NAME/S", "LAST NAME", "DATE RECEIVED", "EXAM CENTRE LOCATION"],
                 "primary": ["GIVEN NAME/S", "LAST NAME", "DATE RECEIVED", "EXAM CENTRE LOCATION"],
+                "noResultLink": "https://data.qld.gov.au/en/dataset/nurses-examinations-1915-to-1925/resource/a4d24e21-3105-403c-91b5-6d6f9ee6c4bb",
+                "itemTitleField": "",
                 "resources": [{
                     "resourceName": "Nurses examinations 1912-1925",
                     "resourceId": "a4d24e21-3105-403c-91b5-6d6f9ee6c4bb",
@@ -916,6 +1042,8 @@ export default {
                 "indexName": "Teachers 1860-1905",
                 "searchable": ["GIVEN NAME/S", "LAST NAME"],
                 "primary": ["GIVEN NAME/S", "LAST NAME"],
+                "noResultLink": "https://data.qld.gov.au/en/dataset/teacher-index-1860-to-1904/resource/89c60504-76f5-4a71-98e6-9179c87b1a91",
+                "itemTitleField": "",
                 "resources": [{
                     "resourceName": "Teachers 1860-1905",
                     "resourceId": "89c60504-76f5-4a71-98e6-9179c87b1a91",
@@ -928,6 +1056,8 @@ export default {
                 "indexName": "Toowoomba Girls Reformatory admissions 1881 - 1903",
                 "searchable": ["GIVEN NAME/S", "LAST NAME", "DATE", "PLACE OF BIRTH"],
                 "primary": ["GIVEN NAME/S", "LAST NAME", "DATE", "DIGITAL IMAGE"],
+                "noResultLink": "https://data.qld.gov.au/en/dataset/toowoomba-girls-reformatory-admissions-1881-to-1903/resource/be8a7998-1915-4561-9460-1ef346a68004",
+                "itemTitleField": "",
                 "resources": [{
                     "resourceName": "Toowoomba Girls Reformatory admissions 1881 - 1903",
                     "resourceId": "be8a7998-1915-4561-9460-1ef346a68004",
@@ -940,6 +1070,8 @@ export default {
                 "indexName": "Toowoomba Girls Reformatory Discharges 1882-1903",
                 "searchable": ["GIVEN NAME/S", "LAST NAME", "DATE"],
                 "primary": ["GIVEN NAME/S", "LAST NAME", "DATE", "DIGITAL IMAGE"],
+                "noResultLink": "https://data.qld.gov.au/en/dataset/toowoomba-girls-reformatory-discharges-1882-to-1903/resource/47468916-6c50-4122-8399-d37dc85160d8",
+                "itemTitleField": "",
                 "resources": [{
                     "resourceName": "Toowoomba Girls Reformatory Discharges 1882-1903",
                     "resourceId": "47468916-6c50-4122-8399-d37dc85160d8",
@@ -952,6 +1084,8 @@ export default {
                 "indexName": "Reformatory School for Boys admissions 1871 to 1906",
                 "searchable": ["GIVEN NAME/S", "LAST NAME", "DATE", "AGE"],
                 "primary": ["GIVEN NAME/S", "LAST NAME", "DATE", "DIGITAL IMAGE"],
+                "noResultLink": "https://data.qld.gov.au/en/dataset/reformatory-school-for-boys-admission-registers-1871-to-1906/resource/efe812eb-c3ea-4713-8536-b5f436690dce",
+                "itemTitleField": "",
                 "resources": [{
                     "resourceName": "Reformatory School for Boys admissions 1871 to 1906",
                     "resourceId": "efe812eb-c3ea-4713-8536-b5f436690dce",
@@ -970,6 +1104,8 @@ export default {
                 "indexName": "Register of Seamen 1882-1919",
                 "searchable": ["GIVEN NAME/S", "LAST NAME", "YEAR", "SHIP"],
                 "primary": ["GIVEN NAME/S", "LAST NAME", "YEAR", "SHIP"],
+                "noResultLink": "https://data.qld.gov.au/en/dataset/seamen-1882-to-1919/resource/9d20d789-8d9a-4371-8dd0-e79a6961f7e4",
+                "itemTitleField": "",
                 "resources": [{
                     "resourceName": "Register of Seamen 1882-1919",
                     "resourceId": "9d20d789-8d9a-4371-8dd0-e79a6961f7e4",
@@ -988,6 +1124,8 @@ export default {
                 "indexName": "Aboriginal War Census Returns 1915-1916",
                 "searchable": ["GIVEN NAME/S", "LAST NAME", "DISTRICT", "TOWN"],
                 "primary": ["GIVEN NAME/S", "LAST NAME", "TOWN", "DIGITAL IMAGE"],
+                "noResultLink": "https://data.qld.gov.au/en/dataset/aboriginal-war-census-1915-to-1916/resource/306fcd00-26ea-44fa-914f-1476732f6b98",
+                "itemTitleField": "",
                 "resources": [{
                     "resourceName": "Aboriginal War Census Returns 1915-1916",
                     "resourceId": "306fcd00-26ea-44fa-914f-1476732f6b98",
@@ -1000,6 +1138,8 @@ export default {
                 "indexName": "Army Reservists 1909-1912",
                 "searchable": ["GIVEN NAME/S", "LAST NAME", "DATE", "SERVICE NO"],
                 "primary": ["GIVEN NAME/S", "LAST NAME", "DATE", "SERVICE NO"],
+                "noResultLink": "https://data.qld.gov.au/en/dataset/army-reservist-payments-1909-to-1912/resource/5e8042ce-bfe1-4430-801d-dddeaa61bbd5",
+                "itemTitleField": "",
                 "resources": [{
                     "resourceName": "Army Reservists 1909-1912",
                     "resourceId": "5e8042ce-bfe1-4430-801d-dddeaa61bbd5",
@@ -1012,6 +1152,8 @@ export default {
                 "indexName": "Boer War - Pay books",
                 "searchable": ["GIVEN NAME/S", "LAST NAME"],
                 "primary": ["GIVEN NAME/S", "LAST NAME", "RANK", "CONTINGENT"],
+                "noResultLink": "https://data.qld.gov.au/en/dataset/boer-war-1899-to-1902/resource/4e6b68c7-53b4-46a4-8d54-f7fb683a2187",
+                "itemTitleField": "",
                 "resources": [{
                     "resourceName": "Boer War - Pay books",
                     "resourceId": "4e6b68c7-53b4-46a4-8d54-f7fb683a2187",
@@ -1024,6 +1166,8 @@ export default {
                 "indexName": "Military Service Records 1899 to 1901",
                 "searchable": ["GIVEN NAME/S", "LAST NAME"],
                 "primary": ["GIVEN NAME/S", "LAST NAME"],
+                "noResultLink": "https://data.qld.gov.au/en/dataset/boer-war-1899-to-1902/resource/0f06967a-3734-4370-85ea-b92621fab18e",
+                "itemTitleField": "",
                 "resources": [{
                     "resourceName": "Military Service Records 1899 to 1901",
                     "resourceId": "0f06967a-3734-4370-85ea-b92621fab18e",
@@ -1036,6 +1180,8 @@ export default {
                 "indexName": "Soldier Settlement 1917-1929",
                 "searchable": ["GIVEN NAME/S", "LAST NAME", "PARISH", "LOCALITY"],
                 "primary": ["GIVEN NAME/S", "LAST NAME", "PARISH", "LOCALITY"],
+                "noResultLink": "https://data.qld.gov.au/en/dataset/soldier-settlement-1917-to-1929/resource/18291d9f-29e6-40a3-8d98-515d89d56ca9",
+                "itemTitleField": "",
                 "resources": [{
                     "resourceName": "Soldier Settlement 1917-1929",
                     "resourceId": "18291d9f-29e6-40a3-8d98-515d89d56ca9",
@@ -1048,6 +1194,8 @@ export default {
                 "indexName": "TB Home applications 1923-1932",
                 "searchable": ["GIVEN NAME/S", "LAST NAME"],
                 "primary": ["GIVEN NAME/S", "LAST NAME", "DATE OF STAT DEC", "DIGITAL IMAGE"],
+                "noResultLink": "https://data.qld.gov.au/en/dataset/tb-home-applications-1923-to-1932/resource/ea28a8c7-9ebb-4853-8128-f166f12dcdfe",
+                "itemTitleField": "",
                 "resources": [{
                     "resourceName": "TB Home applications 1923-1932",
                     "resourceId": "ea28a8c7-9ebb-4853-8128-f166f12dcdfe",
@@ -1060,6 +1208,8 @@ export default {
                 "indexName": "Windsor Town Council Honour Roll 1914 to 1925",
                 "searchable": ["GIVEN NAME/S", "LAST NAME"],
                 "primary": ["GIVEN NAME/S", "LAST NAME", "DIGITAL IMAGE"],
+                "noResultLink": "https://data.qld.gov.au/en/dataset/windsor-town-council-honour-roll-1914-to-1925/resource/f0c7c4fa-b5b6-434f-b098-3275cb3fb361",
+                "itemTitleField": "",
                 "resources": [{
                     "resourceName": "Windsor Town Council Honour Roll 1914 to 1925",
                     "resourceId": "f0c7c4fa-b5b6-434f-b098-3275cb3fb361",
