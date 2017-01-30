@@ -1,21 +1,29 @@
 <script>
     $(document).ready(function(){
+    var selItemTitle = "";
     if (window.location.search.indexOf('checkbox=1') > -1) {
       var selChkBox = getDetails.getParameterByName('checkbox');
       if(selChkBox!="" && selChkBox!=null){
         selChkBox = selChkBox.trim();
       }
+
       var selId = getDetails.getRecordIdValue();
       var selResourceId = getDetails.getResIdValue();
       var str="";
       $('#hdnUrl').show();
       $('#item-url').val("https://qld-uat.ssq.qld.gov.au//dsiti/qsa/request-form/index-result/index.html?resource_id="+selResourceId+"&_id="+selId);
+
       if(selId!=null && selResourceId!=null && selId!="" && selResourceId!=""){
        
           var strDataObj = getDetails.sqlQuery(selId,selResourceId,function successCallback(strData){
           var strDatDetails =strData.result.records[0];
-          $('#item-1-id-or-title').val(strDatDetails["Item ID"]);
-
+          if (window.location.search.indexOf('itemTitle') > -1){
+            selItemTitle = getDetails.getParameterByName('itemTitle');
+            $('#item-1-id-or-title').val(strDatDetails[selItemTitle]);
+          }else{
+            $('#item-1-id-or-title').val(strDatDetails["Item ID"]);
+          }
+          
           $.each(strDatDetails, function( index, value ) {
             if(index != "Description" && index !="Digital image" && index != "Source" && index != "_full_text" && index != "_id" && index != "Item ID"){
               str  = str + index + " = " +value + "\n";  
@@ -57,6 +65,7 @@ function enquiriesCheck() {
 }
 
     </script>
+
 
 <form class="form" action="https://test.smartservice.qld.gov.au/services/submissions/email/qld/qsa-request" enctype="application/x-www-form-urlencoded" method="post">
   <ol class="questions">

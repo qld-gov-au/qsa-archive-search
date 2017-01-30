@@ -1,6 +1,8 @@
 /* JS file for order online form.
 sqlQuery() :- Queries and get details from dataset.
 getParameterByName() :- Extracts the details from url by name.
+getRecordIdValue()	:- For getting the record id from the url.
+getResIdValue()		:- For getting the resource id from the url.
 Version: V1.0
 Date: 18/01/2016
 */

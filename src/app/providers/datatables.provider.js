@@ -62,7 +62,11 @@ class DataTablesProvider {
                             <td>&nbsp;</td>
                             <td colspan="${index.primary.length}">`;
         //--As a part of order online button--
+<<<<<<< ours
         let urlLink = "../request-form/index.html?checkbox=1&search=1";
+=======
+        let urlLink = "http://localhost/DSITI_dev%20folder/HTML-QSA-code-with-JS.html?checkbox=1&search=1";
+>>>>>>> theirs
 
         if (!data['INDEX NAME']) data['INDEX NAME'] = 'No index name provided';
         if (!data['DESCRIPTION']) data['DESCRIPTION'] = 'No description provided';
