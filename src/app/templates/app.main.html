@@ -3,12 +3,14 @@
     <div class="loader"></div>
     <div align="center">Searching...</div>
 </div>
-<div class="status warn"
-     ng-show="vm.showWarning">
-    <div class="inner">
-        <h2 ng-bind="vm.warningHeader" />
-        <div>
-            <label ng-bind="vm.warningMessage">
+<div id="top-warning-msg">
+    <div class="status warn"
+         ng-show="vm.showWarning">
+        <div class="inner">
+            <h2 ng-bind="vm.warningHeader" />
+            <div>
+                <label ng-bind="vm.warningMessage">
+            </div>
         </div>
     </div>
 </div>
@@ -50,40 +52,42 @@
         </div>
     </div>    
 </div>
-<div ng-show="vm.filters.length">
-    <hr class="border-top">
-    <h2>Search by</h2>
-    <div class="status warn" ng-show="vm.showFilterWarning">
-        <h2>No filter criteria</h2>
-        <div>
-          Please enter value in at least one filter or download the full CSV file
+<div id="search-by">
+    <div ng-show="vm.filters.length">
+        <hr class="border-top">
+        <h2>Search by</h2>
+        <div class="status warn" ng-show="vm.showFilterWarning">
+            <h2>No filter criteria</h2>
+            <div>
+              Please enter value in at least one filter or download the full CSV file
+            </div>
         </div>
+        <form class="form">
+            <div class="search-filter-container">
+                <div ng-repeat="filter in vm.filters" class="search-filter">
+                    <qsa-filter-input qsa-target-field="filter.field"
+                                      qsa-index="vm.selectedIndex"
+                                      qsa-filters="vm.filters"
+                                      qsa-source="vm.suggestions"                         
+                                      ng-model="filter.value" />
+                </div>            
+            </div>
+            <div class="search-button-container">
+                <strong><button id="main-search-button"
+                                class="search-button"
+                                ng-click="vm.searchResults()"
+                                qsa-no-focus>
+                                Search
+                </button></strong>
+                <button ng-click="vm.clearSearch()"
+                        ng-show="vm.showClearResearchButton"
+                        class="search-button"
+                        qsa-no-focus>
+                        Clear Search
+                </button>
+            </div>
+        </form>
     </div>
-    <form class="form">
-        <div class="search-filter-container">
-            <div ng-repeat="filter in vm.filters" class="search-filter">
-                <qsa-filter-input qsa-target-field="filter.field"
-                                  qsa-index="vm.selectedIndex"
-                                  qsa-filters="vm.filters"
-                                  qsa-source="vm.suggestions"                         
-                                  ng-model="filter.value" />
-            </div>            
-        </div>
-        <div class="search-button-container">
-            <strong><button id="main-search-button"
-                            class="search-button"
-                            ng-click="vm.searchResults()"
-                            qsa-no-focus>
-                            Search
-            </button></strong>
-            <button ng-click="vm.clearSearch()"
-                    ng-show="vm.showClearResearchButton"
-                    class="search-button"
-                    qsa-no-focus>
-                    Clear Search
-            </button>
-        </div>
-    </form>
 </div>
 <div id="result-block" ng-style="vm.searchResultStyle">
     <h2>Search result</h2>

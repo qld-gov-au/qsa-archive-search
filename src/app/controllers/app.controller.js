@@ -32,6 +32,7 @@ class AppCtrl {
         this.selectedCategory = this.categories[this.selectedCategoryKey];
         this.filters = [];
         this.selectedIndex = {};
+        this.selectedIndexKey = '';
     }
 
     changeIndex(indexKey) {
@@ -39,6 +40,7 @@ class AppCtrl {
         this.showFilterWarning = false;
         this.selectedIndex = this.selectedCategory.indexes[indexKey];
         this.filters = this.getFilters(this.selectedIndex.searchable);
+        this.scrollTo('search-by');
     }
 
     getIndexIdentifier(categoryKey, indexKey) {
@@ -70,7 +72,7 @@ class AppCtrl {
         this.warningMessage = message;
         this.showWarning = true;
         this.isSearching = false;
-        this.scrollToAppHeader();
+        this.scrollTo('app-header');
     }
 
     searchResults() {
@@ -103,7 +105,7 @@ class AppCtrl {
                             this.showClearResearchButton = true;
                             this.resultCategoryName = this.selectedCategory.categoryName;
                             this.resultIndexName = this.selectedIndex.indexName;
-                            this.scrollToResult();
+                            this.scrollTo('result-block');
                         });
 
                     if (!renderSuccess) {
@@ -122,22 +124,15 @@ class AppCtrl {
         }, (err) => {
             this.searchResultStyle.display = 'none';
             this.displayWarning('Please Try Later', 'This index is currently not available');
+            this.scrollTo('top-warning-msg');
 
             console.log(`Failed to get index fields from ${this.selectedIndex.indexName}`);
             console.log(err);
         });
     }
 
-    scrollToResult() {
-        angular.element('body').scrollTo('#result-block');
-    }
-
-    scrollToAppHeader() {
-        angular.element('body').scrollTo('#app-header');
-    }
-
-    scrollToCategories() {
-        angular.element('body').scrollTo('#index-categories');
+    scrollTo(elementId) {
+        angular.element('body').scrollTo(`#${elementId}`);
     }
 
     clearSearch() {
@@ -154,7 +149,7 @@ class AppCtrl {
         this.filters = [];
         this.suggestions = [];
         this.searchResultStyle.display = 'none';
-        this.scrollToAppHeader();
+        this.scrollTo('app-header');
     }
 }
 
