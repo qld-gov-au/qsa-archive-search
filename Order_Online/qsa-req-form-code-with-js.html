@@ -11,8 +11,11 @@
       var selResourceId = getDetails.getResIdValue();
       var str="";
       $('#hdnUrl').show();
-      $('#item-url').val("https://www.qld.gov.au/dsiti/qsa/request-form/index-result/index.html?resource_id="+selResourceId+"&_id="+selId);
-
+      if (window.location.hostname == "qld-uat.ssq.qld.gov.au"){
+        $('#item-url').val("https://qld-uat.ssq.qld.gov.au//dsiti/qsa/request-form/index-result/index.html?resource_id="+selResourceId+"&_id="+selId);
+      }else{
+        $('#item-url').val("https://www.qld.gov.au/dsiti/qsa/request-form/index-result/index.html?resource_id="+selResourceId+"&_id="+selId);
+      }
       if(selId!=null && selResourceId!=null && selId!="" && selResourceId!=""){
        
           var strDataObj = getDetails.sqlQuery(selId,selResourceId,function successCallback(strData){
@@ -67,7 +70,7 @@ function enquiriesCheck() {
     </script>
 
 
-<form class="form" action="https://test.smartservice.qld.gov.au/services/submissions/email/qld/qsa-request" enctype="application/x-www-form-urlencoded" method="post">
+<form class="form" action="https://www.smartservice.qld.gov.au/services/submissions/email/qld/qsa-request" enctype="application/x-www-form-urlencoded" method="post">
   <ol class="questions">
     <li>
       <fieldset>
@@ -415,7 +418,7 @@ function enquiriesCheck() {
                   <label for="item-1-full-entry-details-or-description"> <span class="label">Item 1 full entry details or description</span> <abbr title="(required)" class="required">*</abbr> </label>
                   <textarea name="item-1-full-entry-details-or-description" rows="2" cols="40" required id="item-1-full-entry-details-or-description"></textarea>
                 </li>
-                <li id="hdnUrl">    
+                <li id="hdnUrl" style="display:none;">    
                   <label for="item-url"><span class="label">Item URL</span> <small class="hint"></small> </label><input type="text" name="item-url" size="40" id="item-url" />  
                 </li>
               </ol>
@@ -573,15 +576,13 @@ function enquiriesCheck() {
     <li class="select">
     <fieldset>
         <div id="ifTerms" style="display:none">
-              <legend> <span class="label">Terms and Conditions or Agreement</span> </legend>          
+              <legend> <span class="h2">Information privacy</span> </legend>          
         <div class="instructions"> 
-              <p>Text has not been provided yet.</p>
-              <p>An example agreement from the Scientific Data Supply form:</p>
-              <p>Have you have read our Legal statements, available at http://www.ehp.qld.gov.au/legal/index.html and understand and accept them as part of your agreement in accessing this information?</p>
+              <p>The information you provide on this form will be managed in accordance with <a href="/legal/privacy/index.html" target="_blank">privacy</a> requirements.’ </p>
         </div>
           <ul class="choices"> <li>  
-          <input type="checkbox" name="i-agree-to-the-terms-and-conditions" value="I agree to the terms and conditions" id="i-agree-to-the-terms-and-conditions-i-agree-to-the-terms-and-conditions" />
-          <label for="i-agree-to-the-terms-and-conditions-i-agree-to-the-terms-and-conditions">I agree to the terms and conditions</label>
+          <input type="checkbox" name="i-understand" value="I understand" id="i-understand-i-understand" />
+          <label for="i-understand-i-understand">I understand</label>
         </li>
       </ul>
      </div>
@@ -589,7 +590,7 @@ function enquiriesCheck() {
     </li>
     <li class="section">
       <fieldset>
-        <legend> <span class="h2">Contact details</span> <small class="hint relevance visuallyhidden">(If you chose ‘I agree to the terms and conditions’ above)</small> </legend>
+        <legend> <span class="h2">Contact details</span> <small class="hint relevance visuallyhidden">(If you chose ‘I understand’ above)</small> </legend>
         <ol class="questions">
           <li class="atomic group">
             <fieldset>
@@ -658,15 +659,15 @@ function enquiriesCheck() {
     </li>
     <li class="atomic group">
       <fieldset>
-        <legend> <span class="h3">Understanding your privacy</span> <small class="hint relevance visuallyhidden">(If you chose ‘I agree to the terms and conditions’ above)</small> </legend>
+        <legend> <span class="h2">Ready to go</span> <small class="hint relevance visuallyhidden">(If you chose ‘I understand’ above)</small> </legend>
         <ol class="questions compact">
           <li class="footer">
             <div class="instructions">
-              <p>Queensland State Archives collects information on this form, including your personal information, for the purpose of responding to you. Queensland State Archives will not disclose your personal information to any other third parties or use it for another purpose, without your consent, unless authorised or required by law.</p>
+              <p>Thank you for completing this form. Please check that all your answers are complete and then click submit. We will try to respond to you within 20 working days.</p>
             </div>
             <ul class="actions">
               <li> <strong>
-                <input type="submit" value="Submit" name="understanding-your-privacy" id="understanding-your-privacy-submit" />
+                <input type="submit" value="Submit" name="submit" id="submit-submit" />
                 </strong> </li>
             </ul>
           </li>
