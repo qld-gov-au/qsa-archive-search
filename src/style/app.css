@@ -50,8 +50,8 @@ tr.summary {
     padding-bottom: 1em;
 }
 
-.checkbox-align {
-    padding-left: 20px;
+.checkbox-align li {
+    margin-left: 20px !important;
 }
 
 .search-button {

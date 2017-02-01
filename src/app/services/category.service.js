@@ -1,5 +1,4 @@
 import angular from 'angular';
-import CATEGORIES from '../data/categories';
 
 const SQL_URL = 'https://data.qld.gov.au/api/action/datastore_search_sql?sql=';
 
@@ -7,15 +6,28 @@ const SQL_URL = 'https://data.qld.gov.au/api/action/datastore_search_sql?sql=';
  * A service that handles datastore API request
  */
 class CategoryService {
-    categories = angular.copy(CATEGORIES);
+    categories = undefined;
 
     constructor($http, $q) {
         this.http = $http;
         this.q = $q;
     }
 
-    getCategories() {
-        return this.categories;
+    getCategories(callback) {
+        if (!callback)
+            throw 'A callback is required but not passed.';
+
+        if (!angular.isFunction(callback))
+            throw 'callback is not a function.';
+
+        if (this.categories) {
+            callback(this.categories);
+            return;
+        }
+
+        this.http.get('./categories.json').then((res) => {
+            callback(res.data);
+        });
     }
 
     // Map capatalised field names with actual field names

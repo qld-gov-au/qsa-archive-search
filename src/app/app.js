@@ -1,6 +1,7 @@
 /*
  *  Bootstraping Angular App
  */
+import 'babel-polyfill'; // For IE support, this should not be removed
 import angular from 'angular';
 
 // Controllers

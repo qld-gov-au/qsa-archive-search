@@ -1,37 +1,31 @@
-<h1 id="app-header">Search the records</h1>
 <div class="overlay" ng-if="vm.isSearching">
     <div class="loader"></div>
     <div align="center">Searching...</div>
 </div>
-<div id="top-warning-msg">
-    <div class="status warn"
-         ng-show="vm.showWarning">
-        <div class="inner">
-            <h2 ng-bind="vm.warningHeader" />
-            <div>
-                <label ng-bind="vm.warningMessage">
-            </div>
-        </div>
-    </div>
-</div>
-<div>
-<p>You can find records by searching our indexes or the catalogue. If you know the name of the person you are looking for, then you can try an initial search by selecting one of the <a class="clickable" ng-click="vm.scrollToCategories()">indexes below</a> and typing the person’s name and other relevant information (if you have it) under ‘Search by’.</p>
-<p>If you can’t find what you’re looking for using our index search (not all of our records are indexed), then you can do a more comprehensive search by searching for a word or phrase in our catalogue. For tips on how to use our <a href="http://www.archivessearch.qld.gov.au/Search/BasicSearch.aspx">catalogue</a>, please view the <a href="https://www.qld.gov.au/recreation/arts/heritage/archives/guide-search.pdf">ArchivesSearch Help Guide</a> (PDF, 2.9MB).</p>
-</div>
 <div>
     <h2 id="index-categories">Index categories</h2>
     <p>You can search an individual index under each category below.</p>
+    <div id="top-warning-msg">
+        <div class="status warn" ng-show="vm.showWarning">
+            <div class="inner">
+                <h2 ng-bind="vm.warningHeader" />
+                <div>
+                    <label ng-bind="vm.warningMessage" /> 
+                    <p>Please try again later or <a href="/recreation/arts/heritage/archives/contacts/">contact the State Archives</a> for more information. Alternatively you can view the <a href=" https://data.qld.gov.au/en/dataset?tags=Queensland+State+Archives">data files for the indexes</a> on the Queensland Government data website.</p>
+                </div>
+            </div>
+        </div>
+    </div>
     <div>
         <div ng-repeat="category in vm.categories">
             <label>
                 <input type="radio" 
                        name="category" 
                        ng-model="vm.selectedCategoryKey" 
-                       ng-value="category.categoryKey" ng-change="vm.changeCategory()"> 
-                {{ category.categoryName }}
+                       ng-value="category.categoryKey" 
+                       ng-change="vm.changeCategory()"> {{ category.categoryName }}
             </label>
-            <div class="checkbox-align" 
-                 ng-show="vm.selectedCategoryKey === category.categoryKey">                
+            <div class="checkbox-align" ng-show="vm.selectedCategoryKey === category.categoryKey">
                 <ol class="questions">
                     <li class="group">
                         <ul class="choices">
@@ -41,8 +35,7 @@
                                            name="index" 
                                            ng-model="vm.selectedIndexKey" 
                                            ng-value="vm.getIndexIdentifier(category.categoryKey, indexKey)" 
-                                           ng-change="vm.changeIndex(indexKey)"> 
-                                    {{ index.indexName }}
+                                           ng-change="vm.changeIndex(indexKey)"> {{ index.indexName }}
                                 </label>
                             </li>
                         </ul>
@@ -50,7 +43,7 @@
                 </ol>
             </div>
         </div>
-    </div>    
+    </div>
 </div>
 <div id="search-by">
     <div ng-show="vm.filters.length">
@@ -59,18 +52,18 @@
         <div class="status warn" ng-show="vm.showFilterWarning">
             <h2>No filter criteria</h2>
             <div>
-              Please enter value in at least one filter or download the full CSV file
+                Please enter value in at least one filter or download the full CSV file
             </div>
         </div>
         <form class="form">
             <div class="search-filter-container">
                 <div ng-repeat="filter in vm.filters" class="search-filter">
-                    <qsa-filter-input qsa-target-field="filter.field"
-                                      qsa-index="vm.selectedIndex"
-                                      qsa-filters="vm.filters"
-                                      qsa-source="vm.suggestions"                         
+                    <qsa-filter-input qsa-target-field="filter.field" 
+                                      qsa-index="vm.selectedIndex" 
+                                      qsa-filters="vm.filters" 
+                                      qsa-source="vm.suggestions" 
                                       ng-model="filter.value" />
-                </div>            
+                </div>
             </div>
             <div class="search-button-container">
                 <strong><button id="main-search-button"
@@ -79,11 +72,11 @@
                                 qsa-no-focus>
                                 Search
                 </button></strong>
-                <button ng-click="vm.clearSearch()"
-                        ng-show="vm.showClearResearchButton"
-                        class="search-button"
+                <button ng-click="vm.clearSearch()" 
+                        ng-show="vm.showClearResearchButton" 
+                        class="search-button" 
                         qsa-no-focus>
-                        Clear Search
+                    Clear Search
                 </button>
             </div>
         </form>
@@ -91,6 +84,13 @@
 </div>
 <div id="result-block" ng-style="vm.searchResultStyle">
     <h2>Search result</h2>
+    <div class="status warn" ng-show="vm.showPartialResultWarning">
+        <h2>There seems to be a problem</h2>
+        <div>
+            Some of the information is not currently available. 
+            <p>Please try again later or <a href="/recreation/arts/heritage/archives/contacts/">contact the State Archives</a> for more information. Alternatively you can view the <a href=" https://data.qld.gov.au/en/dataset?tags=Queensland+State+Archives">data files for the indexes</a> on the Queensland Government data website.</p>
+        </div>
+    </div>
     <p><b>Category: </b><lable ng-bind="vm.resultCategoryName"></lable></p>
     <p><b>Index: </b><label ng-bind="vm.resultIndexName"></label><p/>
     <table id="{{ vm.datatableId }}" class="stripe" width="100%" cellspacing="0"></table>

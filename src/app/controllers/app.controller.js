@@ -1,7 +1,9 @@
 class AppCtrl {
+    categories = {};
     showWarning = false;
     showFilterWarning = false;
     showClearResearchButton = false;
+    showPartialResultWarning = false;
     isSearching = false;
     selectedCategoryKey = '';
     selectedCategory = {};
@@ -21,7 +23,10 @@ class AppCtrl {
     constructor(CategoryService, DataTablesProvider) {
         this.CategoryService = CategoryService;
         this.DataTablesProvider = DataTablesProvider;
-        this.categories = CategoryService.getCategories();
+
+        this.CategoryService.getCategories((categories) => {
+            this.categories = categories;
+        });
 
         this.DataTablesProvider.setTableId(this.datatableId);
     }
@@ -114,19 +119,21 @@ class AppCtrl {
                     }
                 } else {
                     this.searchResultStyle.display = 'none';
-                    this.displayWarning('Please Try Later', 'This index is currently not available');
+                    this.displayWarning('There seems to be a problem', 'The index search is not currently available.');
+                    this.scrollTo('top-warning-msg');
                 }
 
                 if (data.success && data.success === 'PART') {
-                    this.displayWarning('Partial Results', 'Part of the data is not available');
+                    this.showPartialResultWarning = true;
+                    this.isSearching = false;
                 }
             });
         }, (err) => {
             this.searchResultStyle.display = 'none';
-            this.displayWarning('Please Try Later', 'This index is currently not available');
+            this.displayWarning('There seems to be a problem', `The index search is not currently available.`);
             this.scrollTo('top-warning-msg');
 
-            console.log(`Failed to get index fields from ${this.selectedIndex.indexName}`);
+            console.error(`Failed to get index fields from ${this.selectedIndex.indexName}`);
             console.log(err);
         });
     }
@@ -149,7 +156,7 @@ class AppCtrl {
         this.filters = [];
         this.suggestions = [];
         this.searchResultStyle.display = 'none';
-        this.scrollTo('app-header');
+        this.scrollTo('index-categories');
     }
 }
 
