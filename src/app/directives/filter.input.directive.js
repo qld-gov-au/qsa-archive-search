@@ -29,7 +29,6 @@ let qsaFilterInput = (CategoryService) => {
         },
         link: (scope, elem, attrs, ngModel) => {
             setAutocomplete(elem, []);
-
             scope.$watch(() => {
                 return ngModel.$modelValue;
             }, (newValue) => {
@@ -62,6 +61,12 @@ let qsaFilterInput = (CategoryService) => {
                     console.error('Autocomplete is not available');
                     console.log(err);
                 });
+            });
+
+            scope.$watch(() => {
+                return elem.children()[1].value;
+            }, (newValue) => {
+                ngModel.$setViewValue(newValue);
             });
         }
     }

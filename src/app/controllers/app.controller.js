@@ -20,7 +20,7 @@ class AppCtrl {
         display: 'none'
     };
 
-    constructor(CategoryService, DataTablesProvider) {
+    constructor(CategoryService, DataTablesProvider, $timeout) {
         this.CategoryService = CategoryService;
         this.DataTablesProvider = DataTablesProvider;
 
@@ -29,6 +29,14 @@ class AppCtrl {
         });
 
         this.DataTablesProvider.setTableId(this.datatableId);
+
+        /* The SWE framework set the height of .article to 630px.
+         * This waits for half second to set the height back to auto.
+         * Otherwise, the index list can't be seen.
+         */
+        $timeout(() => {
+            angular.element('.article')[0].style.height = 'auto';
+        }, 500);
     }
 
     changeCategory() {
@@ -160,6 +168,6 @@ class AppCtrl {
     }
 }
 
-AppCtrl.$inject = ['CategoryService', 'DataTablesProvider'];
+AppCtrl.$inject = ['CategoryService', 'DataTablesProvider', '$timeout'];
 
 export default AppCtrl;

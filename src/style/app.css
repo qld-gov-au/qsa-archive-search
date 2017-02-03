@@ -75,6 +75,12 @@ tr.summary {
     /*dim the background*/
 }
 
+#qsa-loading {
+    position: fixed;
+    top: 47%;
+    left: 47%;
+}
+
 .loader {
     margin: 100px auto;
     font-size: 25px;

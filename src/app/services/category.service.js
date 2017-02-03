@@ -27,6 +27,9 @@ class CategoryService {
 
         this.http.get('./categories.json').then((res) => {
             callback(res.data);
+        }, (err) => {
+            console.error('Cannot load categories.json');
+            console.log(err);
         });
     }
 
@@ -46,6 +49,11 @@ class CategoryService {
     }
 
     formatQuery(resourceId, fields, filters) {
+        if (!resourceId || resourceId === '') {
+            console.log('resourceId is missing');
+            return '';
+        }
+
         let tempQuery = '';
 
         if (fields && angular.isArray(fields)) {
@@ -144,8 +152,20 @@ class CategoryService {
     }
 
     getSearchResults(queries, callback) {
+        let response = {};
         let successResults = [];
         let failedResults = [];
+
+        if (!callback)
+            throw 'A callback is required by not passed';
+
+        if (!angular.isFunction(callback))
+            throw 'callback is not a function';
+
+        if (!queries) {
+            response.success = 'NONE';
+            callback(response);
+        }
 
         // Separate successful and failed results
         let pushResult = (result) => {
@@ -159,8 +179,6 @@ class CategoryService {
 
         // Handle all promises altogether
         this.q.all(requests).then(() => {
-            let response = {};
-
             if (successResults.length === 0) {
                 response.success = 'NONE';
             }
@@ -180,10 +198,7 @@ class CategoryService {
                 }, []);
             }
 
-            if (callback)
-                callback(response)
-            else
-                throw 'A callback is required by not passed';
+            callback(response);
         });
     }
 }

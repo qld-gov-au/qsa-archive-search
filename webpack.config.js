@@ -125,7 +125,7 @@ module.exports = function makeWebpackConfig() {
     // Instrument JS files with istanbul-lib-instrument for subsequent code coverage reporting
     // Skips node_modules and files that end with .test
     if (isTest) {
-        config.module.preLoaders.push({
+        config.module.postLoaders = [{
             test: /\.js$/,
             exclude: [
                 /node_modules/,
@@ -135,7 +135,7 @@ module.exports = function makeWebpackConfig() {
             query: {
                 esModules: true
             }
-        })
+        }];
     }
 
     /**

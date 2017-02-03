@@ -1,6 +1,8 @@
 <div class="overlay" ng-if="vm.isSearching">
-    <div class="loader"></div>
-    <div align="center">Searching...</div>
+    <div id="qsa-loading">
+        <div class="loader"></div>
+        <div align="center">Searching...</div>
+    </div>
 </div>
 <div>
     <h2 id="index-categories">Index categories</h2>
@@ -94,8 +96,4 @@
     <p><b>Category: </b><lable ng-bind="vm.resultCategoryName"></lable></p>
     <p><b>Index: </b><label ng-bind="vm.resultIndexName"></label><p/>
     <table id="{{ vm.datatableId }}" class="stripe" width="100%" cellspacing="0"></table>
-</div>
-<div>
-    <h2>Contact us</h2>
-    <a href="https://www.qld.gov.au/recreation/arts/heritage/archives/contacts/">Contact us</a> if you need further help.
 </div>
