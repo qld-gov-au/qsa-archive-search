@@ -26,7 +26,7 @@ class CategoryService {
             return;
         }
 
-        this.http.get('./categories.json').then((res) => {
+        this.http.get('/dsiti/qsa/search/categories.json').then((res) => {
             callback(res.data);
         }, (err) => {
             console.error('Cannot load categories.json');
