@@ -63,7 +63,7 @@ class DataTablesProvider {
                             <td colspan="${index.primary.length}">`;
 
         //--As a part of order online button--
-        let urlLink = "../request-form/index.html?checkbox=1&search=1";
+        let urlLink = "../qsa/request-form/index.html?checkbox=1&search=1";
 
         if (!data['INDEX NAME']) data['INDEX NAME'] = 'No index name provided';
         if (!data['DESCRIPTION']) data['DESCRIPTION'] = 'No description provided';
