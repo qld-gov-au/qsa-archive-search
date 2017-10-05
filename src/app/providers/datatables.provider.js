@@ -45,7 +45,7 @@ class DataTablesProvider {
 
                     return data;
                 }
-            }
+            };
 
             return [...allColumns, column];
         }, [firstColumn]);
@@ -63,48 +63,87 @@ class DataTablesProvider {
                             <td colspan="${index.primary.length}">`;
 
         //--As a part of order online button--
+        const redirectUrl = 'https://test.smartservice.qld.gov.au/services/test/prodi/products';
+        let firstExtraInfo = '';
+        let secondExtraInfo = '';
+        let extraInfoItems = [];
+        let attribute1;
+        let attribute2;
+        let attribute3;
         let urlLink = "../qsa/request-form/index.html?checkbox=1&search=1";
 
         if (!data['INDEX NAME']) data['INDEX NAME'] = 'No index name provided';
         if (!data['DESCRIPTION']) data['DESCRIPTION'] = 'No description provided';
 
         // Display description
-        extraInfo += `<div>
-                        <p>${data['INDEX NAME']}</p>
-                        <p>${data['DESCRIPTION']}</p>
-                      </div><ul>`;
+        //extraInfo += `<div>
+        //                <p>${data['INDEX NAME']}</p>
+        //                <p>${data['DESCRIPTION']}</p>
+        //              </div><ul class="extra-info">`;
+        extraInfo += `<ul class="extra-info">`;
 
         // Display all fields other than excluded fields
         Object.keys(data).sort().forEach((key) => {
+            let formattedKey = key.charAt(0).toUpperCase() + key.substr(1).toLowerCase();
+            let value = '';
+            if (key === 'SOURCE') {
+                value = `<a href="${data[key]}" target="_blank">${data[key]}</a>`;
+            } else {
+                value = data[key];
+            }
             if (excludedFields.indexOf(key) < 0) {
-                let formatedKey = key.charAt(0).toUpperCase() + key.substr(1).toLowerCase();
-
-                extraInfo += `<li><b>${formatedKey}</b><ul><li>${data[key]}</li></ul></li>`;
+                extraInfoItems.push(`<li><b>${formattedKey}</b><ul><li>${value}</li></ul></li>`);
+            } else {
+                if (index.primary[0] && (key === index.primary[0]) && value) {
+                    firstExtraInfo = `<li><b>${formattedKey}</b><ul><li>${value}</li></ul></li>`;
+                }
+                if (index.primary[1] && (key === index.primary[1]) && value) {
+                    secondExtraInfo = `<li><b>${formattedKey}</b><ul><li>${value}</li></ul></li>`;
+                }
             }
             // --As a part of order online button--
-            if (key == '_ID') {
-                let formatedKeyId = key.replace(/\w\S*/g, (txt) => {
+            if (key === '_ID') {
+                let formattedKeyId = key.replace(/\w\S*/g, (txt) => {
                     return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
                 });
-                urlLink += `&${formatedKeyId}=${data[key]}`;
+                urlLink += `&${formattedKeyId}=${data[key]}`;
             }
-            // -- End OnlineButn--
+            // -- End OnlineButton--
         });
+        extraInfo += firstExtraInfo + secondExtraInfo + extraInfoItems.join('');
         // --As a part of order online button--
         urlLink += `&resource_id=${data['RESOURCE ID']}`;
+
+        attribute1 = data['GIVEN NAME/S'];
+        attribute2 = data['ITEM ID'];
+        attribute3 = data['SOURCE'];
 
         if (index.itemTitleField.trim() !== '')
             urlLink += `&itemTitle=${encodeURIComponent(index.itemTitleField)}`;
 
         // Display an Order Online button
-        extraInfo += `</ul><form class="form form-button">
-                            <a href=${urlLink}><button class="qsa-button">Order Online</button></a>
+        extraInfo += `</ul><form class="form form-button order-form" action="https://test.smartservice.qld.gov.au/services/prodi/addProduct" method="post">
+      <fieldset>
+        Quantity: <input type="text" name="quantity" value="1" id="quantity" size="2" ng-change="vm.changeOrderType()" ng-model="vm.quantity" />
+      </fieldset>
+      <fieldset ng-show="vm.price !== ''">
+        Price: <span ng-bind="vm.price"></span>
+      </fieldset>
+
+      <input type="hidden" name="attribute1" value="${attribute1}" />
+      <input type="hidden" name="attribute2" value="${attribute2}" />
+      <input type="hidden" name="attribute3" value="${attribute3}" />
+      <input type="hidden" class="productId" name="productId" ng-value="vm.productId" />
+      <input type="hidden" name="redirectUrl" value="${redirectUrl}" />
+      <input type="hidden" name="cartId" value="` + SSQ.cart.id + `" />
+      <input type="submit" value="Add To Cart" id="add-to-cart" ng-disabled="vm.validateAddToCart()" ng-click="vm.addToCart($event)" />
+<!--                            <a href=${urlLink}><button class="qsa-button">Order Online</button></a> -->
                            </form></td></tr>`;
 
         return extraInfo;
     }
 
-    renderTable(index, columns, data, drawCallback) {
+    renderTable(index, columns, data, drawCallback, postRender) {
         if (!(this.tableId && typeof this.tableId === 'string' && this.tableId.length > 0)) {
             console.error('Datatable Id is not defined');
             return false;
@@ -134,6 +173,7 @@ class DataTablesProvider {
                 search: 'Refine search:'
             },
             order: [
+                [2, 'asc'],
                 [1, 'asc']
             ],
             drawCallback: (settings) => {
@@ -151,12 +191,26 @@ class DataTablesProvider {
             if (angular.element(tr).hasClass('detailedInfoRow'))
                 return;
 
+            angular.forEach(angular.element(`#${this.tableId} tbody tr`), function(trTmp, key){
+                if (angular.element(trTmp).hasClass('detailedInfoRow')) {
+                    angular.element(trTmp).remove();
+                } else {
+                    angular.element(trTmp).removeClass('shown');
+                }
+            });
+
             if (angular.element(tr).next().hasClass('detailedInfoRow')) {
                 angular.element(tr).next().remove();
                 tr.removeClass('shown');
             } else {
-                angular.element(row.node()).after(this.formatExtraInfo(index, row.node(), row.data()));
-                tr.addClass('shown');
+                let extraInfo = this.formatExtraInfo(index, row.node(), row.data());
+                angular.element(tr).injector().invoke(function($compile) {
+                    let scope = angular.element(tr).scope();
+                    angular.element(row.node()).after($compile(extraInfo)(scope));
+                    scope.$digest();
+                    if (postRender) postRender();
+                    tr.addClass('shown');
+                });
             }
         });
 

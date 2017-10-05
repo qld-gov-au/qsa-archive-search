@@ -11,6 +11,12 @@ tr.detailedInfoRow td {
     border-bottom: 1px solid #000 !important;
 }
 
+tr.detailedInfoRow ul.extra-info,
+tr.detailedInfoRow ul.extra-info ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
 .clickable {
     cursor: pointer;
 }

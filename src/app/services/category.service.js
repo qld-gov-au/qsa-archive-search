@@ -34,7 +34,7 @@ class CategoryService {
         });
     }
 
-    // Map capatalised field names with actual field names
+    // Map capitalised field names with actual field names
     mapFieldKeys(filters, fields) {
         return filters.reduce((map, filter) => {
             for (let field of fields) {
@@ -50,7 +50,8 @@ class CategoryService {
     }
 
     formatQuery(resourceId, fields, filters) {
-        if (!resourceId || resourceId === '') {
+
+        if ( ! resourceId || resourceId === '') {
             console.log('resourceId is missing');
             return '';
         }
@@ -97,6 +98,12 @@ class CategoryService {
     }
 
     formatAutocompleteQuery(resourceId, filters, targetField) {
+
+        if ( ! targetField || targetField === '') {
+            console.log('targetField is missing');
+            return [];
+        }
+
         let tempQuery = `SELECT DISTINCT "${targetField}" FROM "${resourceId}" WHERE `;
 
         let query = filters.reduce((query, filter) => {
@@ -117,17 +124,31 @@ class CategoryService {
     }
 
     formatAutocompleteQueries(resources, filters, targetField) {
-        let queries = resources.reduce((queries, resource) => {
+        return resources.reduce((queries, resource) => {
             let query = this.formatAutocompleteQuery(resource.resourceId, filters, targetField);
-
             return [...queries, query];
         }, []);
+    }
 
-        return queries;
+    // Get 1 row in the resource to use the fields array
+    getResourceFieldValues(resourceId, successCallback, errorCallback) {
+
+        // Ordering with "_id" in descending because some tables seem to have NULL in "Description" Field
+        let query = `SELECT * FROM "${resourceId}" ORDER BY _id DESC LIMIT 1`;
+
+        this.http.get(`${SQL_URL}${query}`)
+            .then((res) => {
+                if (successCallback) successCallback(res.data.result);
+                else throw 'successCallback is required but not passed'
+            }, (err) => {
+                if (errorCallback) errorCallback(err);
+                else console.log(err);
+            });
     }
 
     // Get 1 row in the resource to use the fields array
     getResourceFields(resourceId, successCallback, errorCallback) {
+
         let query = `SELECT * FROM "${resourceId}" LIMIT 1`;
         var url = this.sce.trustAsResourceUrl(`${SQL_URL}${query}`);
         this.http.jsonp(url)
@@ -171,7 +192,7 @@ class CategoryService {
         // Separate successful and failed results
         let pushResult = (result) => {
             result.data.success ? successResults.push(result) : failedResults.push(result);
-        }
+        };
 
         // Make an API call for each resource
         let requests = queries.map((query) => {

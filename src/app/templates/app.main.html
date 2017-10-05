@@ -39,6 +39,7 @@
                                            ng-value="vm.getIndexIdentifier(category.categoryKey, indexKey)" 
                                            ng-change="vm.changeIndex(indexKey)"> {{ index.indexName }}
                                 </label>
+                                <p ng-bind="vm.getCategoryDescription(category.categoryKey, indexKey)"></p>
                             </li>
                         </ul>
                     </li>
@@ -51,6 +52,7 @@
     <div ng-show="vm.filters.length">
         <hr class="border-top">
         <h2>Search by</h2>
+        <p>Fill in one or more fields</p>
         <div class="status warn" ng-show="vm.showFilterWarning">
             <h2>No filter criteria</h2>
             <div>
@@ -93,7 +95,17 @@
             <p>Please try again later or <a href="/recreation/arts/heritage/archives/contacts/">contact the State Archives</a> for more information. Alternatively you can view the <a href=" https://data.qld.gov.au/en/dataset?tags=Queensland+State+Archives">data files for the indexes</a> on the Queensland Government data website.</p>
         </div>
     </div>
-    <p><b>Category: </b><lable ng-bind="vm.resultCategoryName"></lable></p>
+    <p><b>Category: </b><label ng-bind="vm.resultCategoryName"></label></p>
     <p><b>Index: </b><label ng-bind="vm.resultIndexName"></label><p/>
     <table id="{{ vm.datatableId }}" class="stripe" width="100%" cellspacing="0"></table>
+</div>
+<div id="full-index">
+    <h2 tabIndex="0">Full index</h2>
+    <div class="status info" ng-show="!vm.selectedIndex.resources">
+        Select an index to see download links
+    </div>
+    <p ng-show="vm.selectedIndex.resources">Download the full index below</p>
+    <ul>
+        <li ng-repeat="resource in vm.selectedIndex.resources"><a href="{{ resource.download }}">{{ resource.resourceName }}</a></li>
+    </ul>
 </div>
