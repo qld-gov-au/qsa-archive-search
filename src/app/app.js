@@ -8,6 +8,7 @@ import angular from 'angular';
 import AppCtrl from './controllers/app.controller';
 
 // Services
+import EnvService from './services/env.service';
 import CategoryService from './services/category.service';
 import ProductService from './services/product.service';
 
@@ -43,7 +44,7 @@ let appAside = () => {
 };
 
 const MODULE_NAME = 'app';
-const DEPENDENCIES = [ProductService, CategoryService, filterInput, noFocus, DataTablesProvider, sentenceCase];
+const DEPENDENCIES = [EnvService, ProductService, CategoryService, filterInput, noFocus, DataTablesProvider, sentenceCase];
 
 angular.module(MODULE_NAME, DEPENDENCIES)
     .directive('qsaSearchApp', appMain)

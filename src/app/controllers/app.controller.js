@@ -32,7 +32,8 @@ class AppCtrl {
         display: 'none'
     };
 
-    constructor(ProductService, CategoryService, DataTablesProvider, $timeout) {
+    constructor(EnvService, ProductService, CategoryService, DataTablesProvider, $timeout) {
+        this.EnvService = EnvService;
         this.ProductService = ProductService;
         this.CategoryService = CategoryService;
         this.DataTablesProvider = DataTablesProvider;
@@ -87,6 +88,10 @@ class AppCtrl {
         this.scrollTo('search-by');
     }
 
+    toFloat(value) {
+        return parseFloat(value.replace(/\$/g, ''));
+    }
+
     formatCurrency(value) {
         return '$' + value.toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,');
     }
@@ -111,8 +116,8 @@ class AppCtrl {
         if (this.productFound) {
             // console.log('Found Product', this.productFound);
             this.productId = this.productFound.ProductID;
-            // this.price = this.productFound.CostExGST * this.quantity;
-            this.price = this.formatCurrency(parseFloat(this.productFound.TOTAL.replace(/\$/g, '')) * this.quantity);
+            this.price = this.formatCurrency((this.toFloat(this.productFound.CostExGST) + this.toFloat(this.productFound.CostExGST)) * this.quantity);
+            // this.price = this.formatCurrency(parseFloat(this.productFound.TOTAL.replace(/\$/g, '')) * this.quantity);
             // this.productFound.CostExGST
             // this.productFound.GST
             // this.productFound.TOTAL
@@ -208,6 +213,7 @@ class AppCtrl {
                     let columns = this.DataTablesProvider.setColumns(this.selectedIndex.primary);
 
                     let renderSuccess = this.DataTablesProvider.renderTable(
+                        this.EnvService,
                         this.selectedIndex,
                         columns,
                         data.records,
@@ -281,6 +287,6 @@ class AppCtrl {
     }
 }
 
-AppCtrl.$inject = ['ProductService', 'CategoryService', 'DataTablesProvider', '$timeout', '$sce'];
+AppCtrl.$inject = ['EnvService', 'ProductService', 'CategoryService', 'DataTablesProvider', '$timeout', '$sce'];
 
 export default AppCtrl;

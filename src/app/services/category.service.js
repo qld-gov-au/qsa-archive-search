@@ -8,10 +8,11 @@ const SQL_URL = 'https://data.qld.gov.au/api/action/datastore_search_sql?sql=';
 class CategoryService {
     categories = undefined;
 
-    constructor($http, $q, $sce) {
+    constructor($http, $q, $sce, EnvService) {
         this.http = $http;
         this.q = $q;
         this.sce = $sce;
+        this.EnvService = EnvService;
     }
 
     getCategories(callback) {
@@ -100,7 +101,7 @@ class CategoryService {
     formatAutocompleteQuery(resourceId, filters, targetField) {
 
         if ( ! targetField || targetField === '') {
-            console.log('targetField is missing');
+            if (this.EnvService.logWhenMissingData) console.log('targetField is missing');
             return [];
         }
 
@@ -225,7 +226,7 @@ class CategoryService {
     }
 }
 
-CategoryService.$inject = ['$http', '$q', '$sce'];
+CategoryService.$inject = ['$http', '$q', '$sce', 'EnvService'];
 
 export default angular.module('services.category', [])
     .service('CategoryService', CategoryService)

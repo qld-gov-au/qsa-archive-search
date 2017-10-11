@@ -1,4 +1,5 @@
 import angular from 'angular';
+import EnvService from './env.service';
 
 /*
  * A service that handles datastore API request
@@ -7,9 +8,10 @@ class ProductService {
 
     products = undefined;
 
-    constructor($http, $q) {
+    constructor($http, $q, EnvService) {
         this.http = $http;
         this.q = $q;
+        this.EnvService = EnvService;
     }
 
     getProducts(callback) {
@@ -24,9 +26,8 @@ class ProductService {
             return;
         }
 
-        this.http.get('./products.csv').then((res) => {
+        this.http.get(this.EnvService.productFile).then((res) => {
 
-            // debugger;
             const data = res.data;
             const allTextLines = data.split(/\r\n|\n/);
             const headers = allTextLines[0].split(',');
@@ -57,7 +58,7 @@ class ProductService {
     }
 }
 
-ProductService.$inject = ['$http', '$q'];
+ProductService.$inject = ['$http', '$q', 'EnvService'];
 
 export default angular.module('services.product', [])
     .service('ProductService', ProductService)

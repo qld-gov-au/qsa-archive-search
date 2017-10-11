@@ -53,7 +53,7 @@ class DataTablesProvider {
         return columns;
     }
 
-    formatExtraInfo(index, node, data) {
+    formatExtraInfo(EnvService, index, node, data) {
         let excludedFields = [...index.primary, '_ID', '_FULL_TEXT', 'DESCRIPTION', 'INDEX NAME', 'RESOURCE ID'];
 
         let rowClass = angular.element(node).hasClass('even') ? 'even' : 'odd';
@@ -63,7 +63,7 @@ class DataTablesProvider {
                             <td colspan="${index.primary.length}">`;
 
         //--As a part of order online button--
-        const redirectUrl = 'https://test.smartservice.qld.gov.au/services/test/prodi/products';
+        const redirectUrl = EnvService.redirectUrl;
         let firstExtraInfo = '';
         let secondExtraInfo = '';
         let extraInfoItems = [];
@@ -122,7 +122,7 @@ class DataTablesProvider {
             urlLink += `&itemTitle=${encodeURIComponent(index.itemTitleField)}`;
 
         // Display an Order Online button
-        extraInfo += `</ul><form class="form form-button order-form" action="https://test.smartservice.qld.gov.au/services/prodi/addProduct" method="post">
+        extraInfo += `</ul><form class="form form-button order-form" action="${EnvService.smartServiceUrlPrefix}/services/prodi/addProduct" method="post">
       <fieldset>
         Quantity: <input type="text" name="quantity" value="1" id="quantity" size="2" ng-change="vm.changeOrderType()" ng-model="vm.quantity" />
       </fieldset>
@@ -143,7 +143,7 @@ class DataTablesProvider {
         return extraInfo;
     }
 
-    renderTable(index, columns, data, drawCallback, postRender) {
+    renderTable(EnvService, index, columns, data, drawCallback, postRender) {
         if (!(this.tableId && typeof this.tableId === 'string' && this.tableId.length > 0)) {
             console.error('Datatable Id is not defined');
             return false;
@@ -203,7 +203,8 @@ class DataTablesProvider {
                 angular.element(tr).next().remove();
                 tr.removeClass('shown');
             } else {
-                let extraInfo = this.formatExtraInfo(index, row.node(), row.data());
+                let extraInfo = this.formatExtraInfo(EnvService, index, row.node(), row.data());
+                // Embed "extraInfo" after digesting the directives within (They are displayed as is otherwise)
                 angular.element(tr).injector().invoke(function($compile) {
                     let scope = angular.element(tr).scope();
                     angular.element(row.node()).after($compile(extraInfo)(scope));

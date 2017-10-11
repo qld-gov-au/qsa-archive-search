@@ -10,11 +10,11 @@
 
             <div class="ssq-minicart-submit">
                 <input type="hidden" id="ssq-cart-contents" name="ssq-cart-contents" value=""/>
-                <a href="https://test.smartservice.qld.gov.au/payment/cart/checkout"><img id="ssq_minicart_checkout"
-                                                                  src="https://test.smartservice.qld.gov.au/payment/minicart/btn-checkout.png"
+                <a href="{{vm.EnvService.smartServiceUrlPrefix}}/payment/cart/checkout"><img id="ssq_minicart_checkout"
+                                                                  src="{{vm.EnvService.smartServiceUrlPrefix}}/payment/minicart/btn-checkout.png"
                                                                   alt="Checkout"/></a>
-                <a href="https://test.smartservice.qld.gov.au/payment/cart/view"><img id="ssq_minicart_cart"
-                                                              src="https://test.smartservice.qld.gov.au/payment/minicart/btn-cart.png"
+                <a href="{{vm.EnvService.smartServiceUrlPrefix}}/payment/cart/view"><img id="ssq_minicart_cart"
+                                                              src="{{vm.EnvService.smartServiceUrlPrefix}}/payment/minicart/btn-cart.png"
                                                               alt="Edit cart"/></a>
             </div>
         </div>
@@ -22,8 +22,8 @@
         <div class="ssq-minicart-cards">
             <h3>Cards accepted</h3>
             <ul>
-                <li><img src="https://test.smartservice.qld.gov.au/payment/minicart/visa.png" alt="Visa"/></li>
-                <li><img src="https://test.smartservice.qld.gov.au/payment/minicart/mastercard.png" alt="MasterCard"/></li>
+                <li><img src="{{vm.EnvService.smartServiceUrlPrefix}}/payment/minicart/visa.png" alt="Visa"/></li>
+                <li><img src="{{vm.EnvService.smartServiceUrlPrefix}}/payment/minicart/mastercard.png" alt="MasterCard"/></li>
             </ul>
         </div>
     </div>
