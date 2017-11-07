@@ -1,10 +1,31 @@
 <div class="aside story">
-    <h2 tabIndex="0">Full index</h2>
-    <div class="status info" ng-show="!vm.selectedIndex.resources">
-        Select an index to see download links
+
+    <div id="ssq-minicart">
+
+        <h2>Cart</h2>
+
+        <div id="ssq-minicart-view">
+            <!-- TODO noscript customer instructions -->
+            <p class="ssq-minicart-noscript">Edit cart or checkout to place your order.</p>
+
+            <div class="ssq-minicart-submit">
+                <input type="hidden" id="ssq-cart-contents" name="ssq-cart-contents" value=""/>
+                <a href="{{vm.EnvService.smartServiceUrlPrefix}}/payment/cart/checkout"><img id="ssq_minicart_checkout"
+                                                                  src="{{vm.EnvService.smartServiceUrlPrefix}}/payment/minicart/btn-checkout.png"
+                                                                  alt="Checkout"/></a>
+                <a href="{{vm.EnvService.smartServiceUrlPrefix}}/payment/cart/view"><img id="ssq_minicart_cart"
+                                                              src="{{vm.EnvService.smartServiceUrlPrefix}}/payment/minicart/btn-cart.png"
+                                                              alt="Edit cart"/></a>
+            </div>
+        </div>
+
+        <div class="ssq-minicart-cards">
+            <h3>Cards accepted</h3>
+            <ul>
+                <li><img src="{{vm.EnvService.smartServiceUrlPrefix}}/payment/minicart/visa.png" alt="Visa"/></li>
+                <li><img src="{{vm.EnvService.smartServiceUrlPrefix}}/payment/minicart/mastercard.png" alt="MasterCard"/></li>
+            </ul>
+        </div>
     </div>
-    <p ng-show="vm.selectedIndex.resources">Download the full index below</p>
-    <ul>
-        <li ng-repeat="resource in vm.selectedIndex.resources"><a href="{{ resource.download }}">{{ resource.resourceName }}</a></li>
-    </ul>
+
 </div>

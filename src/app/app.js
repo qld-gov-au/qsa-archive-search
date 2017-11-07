@@ -1,5 +1,5 @@
 /*
- *  Bootstraping Angular App
+ *  Bootstrapping Angular App
  */
 import 'babel-polyfill'; // For IE support, this should not be removed
 import angular from 'angular';
@@ -8,7 +8,9 @@ import angular from 'angular';
 import AppCtrl from './controllers/app.controller';
 
 // Services
+import EnvService from './services/env.service';
 import CategoryService from './services/category.service';
+import ProductService from './services/product.service';
 
 // Directives
 import filterInput from './directives/filter.input.directive';
@@ -30,7 +32,7 @@ let appMain = () => {
         controller: 'AppCtrl',
         controllerAs: 'vm'
     }
-}
+};
 
 let appAside = () => {
     return {
@@ -39,10 +41,10 @@ let appAside = () => {
         controller: 'AppCtrl',
         controllerAs: 'vm'
     }
-}
+};
 
 const MODULE_NAME = 'app';
-const DEPENDENCIES = [CategoryService, filterInput, noFocus, DataTablesProvider, sentenceCase];
+const DEPENDENCIES = [EnvService, ProductService, CategoryService, filterInput, noFocus, DataTablesProvider, sentenceCase];
 
 angular.module(MODULE_NAME, DEPENDENCIES)
     .directive('qsaSearchApp', appMain)

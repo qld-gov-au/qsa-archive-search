@@ -14,7 +14,7 @@ let qsaFilterInput = (CategoryService) => {
             source: suggestions,
             minLength: 3
         });
-    }
+    };
 
     return {
         restrict: 'E',
@@ -70,7 +70,7 @@ let qsaFilterInput = (CategoryService) => {
             });
         }
     }
-}
+};
 
 qsaFilterInput.$inject = ['CategoryService'];
 

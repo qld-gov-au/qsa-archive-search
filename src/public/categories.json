@@ -14,8 +14,8 @@
           "TOWN"
         ],
         "primary": [
-          "GIVEN NAME/S",
           "LAST NAME",
+          "GIVEN NAME/S",
           "TOWN",
           "DIGITAL IMAGE"
         ],
@@ -44,8 +44,8 @@
           "LAST NAME"
         ],
         "primary": [
-          "GIVEN NAME/S",
-          "LAST NAME"
+          "LAST NAME",
+          "GIVEN NAME/S"
         ],
         "noResultLink": "https://data.qld.gov.au/en/dataset/australian-south-sea-islanders-1867-to-1908",
         "itemTitleField": "",
@@ -73,8 +73,8 @@
           "POLICE DISTRICT"
         ],
         "primary": [
-          "GIVEN NAME/S",
           "LAST NAME",
+          "GIVEN NAME/S",
           "BIRTHPLACE",
           "POLICE DISTRICT"
         ],
@@ -160,8 +160,8 @@
           "NAME OF SHIP"
         ],
         "primary": [
-          "GIVEN NAME/S",
           "LAST NAME",
+          "GIVEN NAME/S",
           "DATE OF CONVICTION",
           "DIGITAL IMAGE"
         ],
@@ -186,8 +186,8 @@
           "DATE"
         ],
         "primary": [
-          "GIVEN NAME/S",
           "LAST NAME",
+          "GIVEN NAME/S",
           "DATE",
           "DIGITAL IMAGE"
         ],
@@ -212,8 +212,8 @@
           "AGE"
         ],
         "primary": [
-          "GIVEN NAME/S",
           "LAST NAME",
+          "GIVEN NAME/S",
           "NATIVE PLACE",
           "DIGITAL IMAGE"
         ],
@@ -237,8 +237,8 @@
           "DATE"
         ],
         "primary": [
-          "GIVEN NAME/S",
           "LAST NAME",
+          "GIVEN NAME/S",
           "DATE",
           "DIGITAL IMAGE"
         ],
@@ -262,8 +262,8 @@
           "PRISON NO"
         ],
         "primary": [
-          "GIVEN NAME/S",
           "LAST NAME",
+          "GIVEN NAME/S",
           "PRISON NO"
         ],
         "noResultLink": "https://data.qld.gov.au/en/dataset/st-helena-prisoner-index-1863-to-1936/resource/00927ffb-3ff7-4732-b209-744750541d38",
@@ -286,8 +286,8 @@
           "DATE DISCHARGED"
         ],
         "primary": [
-          "GIVEN NAME/S",
           "LAST NAME",
+          "GIVEN NAME/S",
           "DATE DISCHARGED"
         ],
         "noResultLink": "https://data.qld.gov.au/en/dataset/indextoprisonerstriedtoowoomba1864-1903-csv/resource/c1828191-1d4a-4518-b638-79fa5295cfe7",
@@ -311,8 +311,8 @@
           "DATE OF SITTING"
         ],
         "primary": [
-          "GIVEN NAME/S",
           "LAST NAME",
+          "GIVEN NAME/S",
           "COURT SITTING LOCATION",
           "DATE OF SITTING"
         ],
@@ -337,8 +337,8 @@
           "PRISONER NO"
         ],
         "primary": [
-          "GIVEN NAME/S",
           "LAST NAME",
+          "GIVEN NAME/S",
           "DATE CONVICTED",
           "PRISONER NO"
         ],
@@ -363,8 +363,8 @@
           "DATE OF RECEIPT IN GAOL"
         ],
         "primary": [
-          "GIVEN NAME/S",
           "LAST NAME",
+          "GIVEN NAME/S",
           "DATE OF SENTENCE",
           "DATE OF RECEIPT IN GAOL"
         ],
@@ -393,8 +393,8 @@
           "LAST NAME"
         ],
         "primary": [
-          "GIVEN NAME/S",
-          "LAST NAME"
+          "LAST NAME",
+          "GIVEN NAME/S"
         ],
         "noResultLink": "https://data.qld.gov.au/en/dataset/criminal-depositions-1861-to-1885/resource/cb74e964-85df-4261-a4c6-4d1be5702f9d",
         "itemTitleField": "",
@@ -416,8 +416,8 @@
           "DISTRICT"
         ],
         "primary": [
-          "GIVEN NAME/S",
           "LAST NAME",
+          "GIVEN NAME/S",
           "DISTRICT"
         ],
         "noResultLink": "https://data.qld.gov.au/en/dataset/divorces-1861-to-1894/resource/9db95d63-c79c-4224-8811-6d414765089a",
@@ -440,8 +440,8 @@
           "DATE FILED"
         ],
         "primary": [
-          "GIVEN NAME/S",
           "LAST NAME",
+          "GIVEN NAME/S",
           "DATE FILED"
         ],
         "noResultLink": "https://data.qld.gov.au/en/dataset/equity-files-1857-to-1899/resource/80c49c0a-36f8-47ab-a3ae-a63682385637",
@@ -464,8 +464,8 @@
           "YEAR"
         ],
         "primary": [
-          "GIVEN NAME/S",
           "LAST NAME",
+          "GIVEN NAME/S",
           "YEAR"
         ],
         "noResultLink": "https://data.qld.gov.au/en/dataset/inquests-1859-to-1902/resource/68bbc9ba-7c9f-46f4-98a9-de7d3e66a8f5",
@@ -489,8 +489,8 @@
           "DATE FILED"
         ],
         "primary": [
-          "GIVEN NAME/S",
           "LAST NAME",
+          "GIVEN NAME/S",
           "DATE OF DEATH",
           "DATE FILED"
         ],
@@ -515,8 +515,8 @@
           "DATE OF OATH"
         ],
         "primary": [
-          "GIVEN NAME/S",
           "LAST NAME",
+          "GIVEN NAME/S",
           "OATH NO",
           "DATE OF OATH"
         ],
@@ -540,8 +540,8 @@
           "YEAR"
         ],
         "primary": [
-          "GIVEN NAME/S",
           "LAST NAME",
+          "GIVEN NAME/S",
           "YEAR"
         ],
         "noResultLink": "https://data.qld.gov.au/en/dataset/naturalisations-1851-to-1904/resource/7b5ddae5-78ef-4d8e-b800-56e6f30d26d5",
@@ -565,8 +565,8 @@
           "DATE"
         ],
         "primary": [
-          "GIVEN NAME/S",
           "LAST NAME",
+          "GIVEN NAME/S",
           "OFFENCE/ACT",
           "DATE"
         ],
@@ -591,8 +591,8 @@
           "TRUSTEE FILE NO"
         ],
         "primary": [
-          "GIVEN NAME/S",
           "LAST NAME",
+          "GIVEN NAME/S",
           "DATE OF DEATH",
           "TRUSTEE FILE NO"
         ],
@@ -617,8 +617,8 @@
           "WILL NO"
         ],
         "primary": [
-          "GIVEN NAME/S",
           "LAST NAME",
+          "GIVEN NAME/S",
           "DISTRICT",
           "WILL NO"
         ],
@@ -649,8 +649,8 @@
           "OCCUPATION"
         ],
         "primary": [
-          "GIVEN NAME/S",
           "LAST NAME",
+          "GIVEN NAME/S",
           "DATE OF BIRTH",
           "OCCUPATION"
         ],
@@ -673,8 +673,8 @@
           "LAST NAME"
         ],
         "primary": [
-          "GIVEN NAME/S",
-          "LAST NAME"
+          "LAST NAME",
+          "GIVEN NAME/S"
         ],
         "noResultLink": "https://data.qld.gov.au/en/dataset/imperial-pensions-1872-to-1915/resource/fa62cc28-ecb8-44cd-a2d5-d8f9cbe34df1",
         "itemTitleField": "",
@@ -696,8 +696,8 @@
           "DATE"
         ],
         "primary": [
-          "GIVEN NAME/S",
           "LAST NAME",
+          "GIVEN NAME/S",
           "DATE"
         ],
         "noResultLink": "https://data.qld.gov.au/en/dataset/imperial-pensions-1872-to-1915/resource/3416b4c1-b2ab-40cd-a7af-4b24c5f5c906",
@@ -715,15 +715,15 @@
         "categoryKey": "GOV",
         "indexName": "Indigence cases 1899-1948",
         "searchable": [
-          "GIVEN NAME/S",
+          "GIVEN NAMES",
           "LAST NAME",
-          "PLACE OF BIRTH OR LOCALITY",
+          "LOCALITY",
           "DATE"
         ],
         "primary": [
-          "GIVEN NAME/S",
           "LAST NAME",
-          "PLACE OF BIRTH OR LOCALITY",
+          "GIVEN NAMES",
+          "LOCALITY",
           "DATE"
         ],
         "noResultLink": "https://data.qld.gov.au/en/dataset/indigence-cases-1899-to-1948/resource/cd341174-5105-4c74-9e83-09944dca58c7",
@@ -753,8 +753,8 @@
           "SHIP/PAGE NO"
         ],
         "primary": [
-          "GIVEN NAME/S",
           "LAST NAME",
+          "GIVEN NAME/S",
           "SHIP/PAGE NO",
           "DATE"
         ],
@@ -778,8 +778,8 @@
           "DATE"
         ],
         "primary": [
-          "GIVEN NAME/S",
           "LAST NAME",
+          "GIVEN NAME/S",
           "DATE",
           "TYPE"
         ],
@@ -803,8 +803,8 @@
           "DATE"
         ],
         "primary": [
-          "GIVEN NAME/S",
           "LAST NAME",
+          "GIVEN NAME/S",
           "DATE",
           "CERTIFICATE NO"
         ],
@@ -829,8 +829,8 @@
           "SHIP"
         ],
         "primary": [
-          "GIVEN NAME/S",
           "LAST NAME",
+          "GIVEN NAME/S",
           "DATE",
           "DIGITAL IMAGE"
         ],
@@ -959,14 +959,21 @@
         "categoryKey": "IMMI",
         "indexName": "Nominated immigrants 1908-1922",
         "searchable": [
-          "GIVEN NAME/S",
+          "GIVEN NAMES",
           "LAST NAME",
           "YEAR",
           "SHIP"
         ],
+        "searchable_attribute": [
+          {
+            "DATE": {
+              "is_numeric": "1"
+            }
+          }
+        ],
         "primary": [
-          "GIVEN NAME/S",
           "LAST NAME",
+          "GIVEN NAMES",
           "YEAR",
           "SHIP"
         ],
@@ -991,8 +998,8 @@
           "SHIP"
         ],
         "primary": [
-          "GIVEN NAME/S",
           "LAST NAME",
+          "GIVEN NAME/S",
           "DATE ARRIVED",
           "SHIP"
         ],
@@ -1017,8 +1024,8 @@
           "PLACE OF BIRTH OR LOCALITY"
         ],
         "primary": [
-          "GIVEN NAME/S",
           "LAST NAME",
+          "GIVEN NAMES",
           "DATE",
           "PLACE OF BIRTH OR LOCALITY"
         ],
@@ -1044,9 +1051,9 @@
         ],
         "primary": [
           "LAST NAME/COMPANY NAME",
+          "GIVEN NAME/S",
           "YEAR",
-          "LAND ORDER NO",
-          "GIVEN NAME/S"
+          "LAND ORDER NO"
         ],
         "noResultLink": "https://data.qld.gov.au/en/dataset/land-orders-1861-to-1874/resource/030e30af-0c04-427b-a2a1-74799c1f9798",
         "itemTitleField": "",
@@ -1070,9 +1077,9 @@
         ],
         "primary": [
           "LAST NAME/COMPANY NAME",
+          "GIVEN NAME/S",
           "DATE ISSUED",
-          "LAND ORDER NO",
-          "GIVEN NAME/S"
+          "LAND ORDER NO"
         ],
         "noResultLink": "https://data.qld.gov.au/en/dataset/land-orders-1862-to-1878/resource/77744aff-a5c3-4fdb-a6bb-502cde18f5fa",
         "itemTitleField": "",
@@ -1094,8 +1101,8 @@
           "DATE OF ARRIVAL/START DATE"
         ],
         "primary": [
-          "GIVEN NAME/S",
           "LAST NAME",
+          "GIVEN NAME/S",
           "DATE OF ARRIVAL/START DATE"
         ],
         "noResultLink": "https://data.qld.gov.au/en/dataset/oronsay-immigration-1925-to-1972/resource/fbdbc235-45c3-4f55-96c4-29acfdd04c86",
@@ -1119,8 +1126,8 @@
           "RECEIPT NO"
         ],
         "primary": [
-          "GIVEN NAME/S",
           "LAST NAME",
+          "GIVEN NAME/S",
           "DATE",
           "RECEIPT NO"
         ],
@@ -1145,8 +1152,8 @@
           "VESSEL"
         ],
         "primary": [
-          "GIVEN NAME/S",
           "LAST NAME",
+          "GIVEN NAME/S",
           "DATE OF ARRIVAL",
           "VESSEL"
         ],
@@ -1171,8 +1178,8 @@
           "DEPOSITOR/APPLICANT"
         ],
         "primary": [
-          "GIVEN NAME/S",
           "LAST NAME",
+          "GIVEN NAME/S",
           "DATE OF ARRIVAL",
           "DEPOSITOR/APPLICANT"
         ],
@@ -1197,8 +1204,8 @@
           "SHIP"
         ],
         "primary": [
-          "GIVEN NAME/S",
           "LAST NAME",
+          "GIVEN NAME/S",
           "DATE",
           "SHIP"
         ],
@@ -1223,8 +1230,8 @@
           "SHIP"
         ],
         "primary": [
-          "GIVEN NAME/S",
           "LAST NAME",
+          "GIVEN NAME/S",
           "DATE OF ARRIVAL",
           "SHIP"
         ],
@@ -1254,8 +1261,8 @@
           "SHIP"
         ],
         "primary": [
-          "GIVEN NAME/S",
           "LAST NAME",
+          "GIVEN NAME/S",
           "DATE OF ARRIVAL",
           "SHIP"
         ],
@@ -1286,8 +1293,8 @@
           "LAND ORDER NO"
         ],
         "primary": [
-          "GIVEN NAME/S",
           "LAST NAME",
+          "GIVEN NAMES",
           "DATE",
           "LAND ORDER NO"
         ],
@@ -1333,8 +1340,8 @@
           "LICENCE NO"
         ],
         "primary": [
-          "GIVEN NAME/S",
           "LAST NAME",
+          "GIVEN NAME/S",
           "LICENCE NO"
         ],
         "noResultLink": "https://data.qld.gov.au/en/dataset/miners-rights-1874-to-1880",
@@ -1387,8 +1394,8 @@
           "LAST NAME"
         ],
         "primary": [
-          "GIVEN NAME/S",
-          "LAST NAME"
+          "LAST NAME",
+          "GIVEN NAME/S"
         ],
         "noResultLink": "https://data.qld.gov.au/en/dataset/register-of-lands-1861-1868/resource/e1afdc88-d43a-4c30-bfa3-5f02cd2862ec",
         "itemTitleField": "",
@@ -1410,8 +1417,8 @@
           "DATE"
         ],
         "primary": [
-          "GIVEN NAME/S",
           "LAST NAME",
+          "GIVEN NAME/S",
           "DATE"
         ],
         "noResultLink": "https://data.qld.gov.au/en/dataset/register-lands-sold-1849-to-1861/resource/0bbbd847-7b15-4a3f-9f26-7aea561d3905",
@@ -1483,8 +1490,8 @@
           "LOCALITY"
         ],
         "primary": [
-          "GIVEN NAME/S",
           "LAST NAME",
+          "GIVEN NAME/S",
           "PARISH",
           "LOCALITY"
         ],
@@ -1540,8 +1547,8 @@
           "DATE OF ADMISSION"
         ],
         "primary": [
-          "GIVEN NAME/S",
           "LAST NAME",
+          "GIVEN NAME/S",
           "DATE OF ADMISSION"
         ],
         "noResultLink": "https://data.qld.gov.au/en/dataset/brisbane-hospital-admissions-1872-to-1887/resource/93a375da-8ab0-4a01-b97d-a58e120021b2",
@@ -1564,8 +1571,8 @@
           "DATE OF DEATH"
         ],
         "primary": [
-          "GIVEN NAME/S",
           "LAST NAME",
+          "GIVEN NAME/S",
           "DATE OF DEATH",
           "AGE"
         ],
@@ -1589,8 +1596,8 @@
           "DATE OF DEATH"
         ],
         "primary": [
-          "GIVEN NAME/S",
           "LAST NAME",
+          "GIVEN NAME/S",
           "DATE OF DEATH",
           "AGE"
         ],
@@ -1614,8 +1621,8 @@
           "DATE"
         ],
         "primary": [
-          "GIVEN NAME/S",
           "LAST NAME",
+          "GIVEN NAME/S",
           "DATE"
         ],
         "noResultLink": "https://data.qld.gov.au/en/dataset/consumptive-patients-1897-to-1902/resource/2a311e6a-17b9-47ad-ae02-0141935c8193",
@@ -1637,8 +1644,8 @@
           "LAST NAME"
         ],
         "primary": [
-          "GIVEN NAME/S",
-          "LAST NAME"
+          "LAST NAME",
+          "GIVEN NAME/S"
         ],
         "noResultLink": "https://data.qld.gov.au/en/dataset/dental-board-1903-to-1932/resource/df6b283f-4b16-42cc-8332-4db43f93dd7c",
         "itemTitleField": "",
@@ -1660,8 +1667,8 @@
           "DATE"
         ],
         "primary": [
-          "GIVEN NAME/S",
           "LAST NAME",
+          "GIVEN NAME/S",
           "DATE"
         ],
         "noResultLink": "https://data.qld.gov.au/en/dataset/dental-board-1903-to-1932/resource/cab24815-f422-4fc3-965c-0acbc5a51862",
@@ -1683,8 +1690,8 @@
           "LAST NAME"
         ],
         "primary": [
-          "GIVEN NAME/S",
-          "LAST NAME"
+          "LAST NAME",
+          "GIVEN NAME/S"
         ],
         "noResultLink": "https://data.qld.gov.au/en/dataset/dental-board-1903-to-1932/resource/99661cb1-b77f-464d-b5e7-e837191b4cd6",
         "itemTitleField": "",
@@ -1707,8 +1714,8 @@
           "AGE"
         ],
         "primary": [
-          "GIVEN NAME/S",
           "LAST NAME",
+          "GIVEN NAME/S",
           "DATE OF ADMISSION",
           "AGE"
         ],
@@ -1733,8 +1740,8 @@
           "EXAM CENTRE LOCATION"
         ],
         "primary": [
-          "GIVEN NAME/S",
           "LAST NAME",
+          "GIVEN NAME/S",
           "DATE RECEIVED",
           "EXAM CENTRE LOCATION"
         ],
@@ -1757,8 +1764,8 @@
           "LAST NAME"
         ],
         "primary": [
-          "GIVEN NAME/S",
-          "LAST NAME"
+          "LAST NAME",
+          "GIVEN NAME/S"
         ],
         "noResultLink": "https://data.qld.gov.au/en/dataset/teacher-index-1860-to-1904/resource/89c60504-76f5-4a71-98e6-9179c87b1a91",
         "itemTitleField": "",
@@ -1781,8 +1788,8 @@
           "PLACE OF BIRTH"
         ],
         "primary": [
-          "GIVEN NAME/S",
           "LAST NAME",
+          "GIVEN NAME/S",
           "DATE",
           "DIGITAL IMAGE"
         ],
@@ -1806,8 +1813,8 @@
           "DATE"
         ],
         "primary": [
-          "GIVEN NAME/S",
           "LAST NAME",
+          "GIVEN NAME/S",
           "DATE",
           "DIGITAL IMAGE"
         ],
@@ -1832,8 +1839,8 @@
           "AGE"
         ],
         "primary": [
-          "GIVEN NAME/S",
           "LAST NAME",
+          "GIVEN NAME/S",
           "DATE",
           "DIGITAL IMAGE"
         ],
@@ -1864,8 +1871,8 @@
           "SHIP"
         ],
         "primary": [
-          "GIVEN NAME/S",
           "LAST NAME",
+          "GIVEN NAME/S",
           "YEAR",
           "SHIP"
         ],
@@ -1896,8 +1903,8 @@
           "TOWN"
         ],
         "primary": [
-          "GIVEN NAME/S",
           "LAST NAME",
+          "GIVEN NAME/S",
           "TOWN",
           "DIGITAL IMAGE"
         ],
@@ -1922,8 +1929,8 @@
           "SERVICE NO"
         ],
         "primary": [
-          "GIVEN NAME/S",
           "LAST NAME",
+          "GIVEN NAME/S",
           "DATE",
           "SERVICE NO"
         ],
@@ -1946,8 +1953,8 @@
           "LAST NAME"
         ],
         "primary": [
-          "GIVEN NAME/S",
           "LAST NAME",
+          "GIVEN NAME/S",
           "RANK",
           "CONTINGENT"
         ],
@@ -1970,8 +1977,8 @@
           "LAST NAME"
         ],
         "primary": [
-          "GIVEN NAME/S",
-          "LAST NAME"
+          "LAST NAME",
+          "GIVEN NAME/S"
         ],
         "noResultLink": "https://data.qld.gov.au/en/dataset/boer-war-1899-to-1902/resource/0f06967a-3734-4370-85ea-b92621fab18e",
         "itemTitleField": "",
@@ -1994,8 +2001,8 @@
           "LOCALITY"
         ],
         "primary": [
-          "GIVEN NAME/S",
           "LAST NAME",
+          "GIVEN NAME/S",
           "PARISH",
           "LOCALITY"
         ],
@@ -2018,8 +2025,8 @@
           "LAST NAME"
         ],
         "primary": [
-          "GIVEN NAME/S",
           "LAST NAME",
+          "GIVEN NAME/S",
           "DATE OF STAT DEC",
           "DIGITAL IMAGE"
         ],
@@ -2042,8 +2049,8 @@
           "LAST NAME"
         ],
         "primary": [
-          "GIVEN NAME/S",
           "LAST NAME",
+          "GIVEN NAME/S",
           "DIGITAL IMAGE"
         ],
         "noResultLink": "https://data.qld.gov.au/en/dataset/windsor-town-council-honour-roll-1914-to-1925/resource/f0c7c4fa-b5b6-434f-b098-3275cb3fb361",
