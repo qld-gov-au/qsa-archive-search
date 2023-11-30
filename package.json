@@ -22,7 +22,7 @@
   "homepage": "https://github.com/qld-gov-au/qsa-archive-search",
   "dependencies": {
     "angular": "^1.5.0",
-    "angular-ui-router": "^0.4.2",
+    "angular-ui-router": "^1.0.0",
     "babel-polyfill": "^6.22.0"
   },
   "devDependencies": {
